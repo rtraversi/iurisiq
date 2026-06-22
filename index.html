@@ -1,538 +1,962 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>IurisIQ — AI-Powered Legal Practice Management</title>
   <meta name="description" content="IurisIQ is the modular, AI-powered case management portal built exclusively for small law offices. Secure by design. Customizable by nature.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#00174b",
+            "surface-container-high": "#282a32",
+            "slate-900": "#0F172A",
+            "on-surface-variant": "#c3c6d7",
+            "on-background": "#e1e2ed",
+            "error-container": "#93000a",
+            "inverse-primary": "#0053db",
+            "on-surface": "#e1e2ed",
+            "on-tertiary-container": "#4e3d00",
+            "slate-800": "#1E293B",
+            "tertiary": "#e9c349",
+            "on-error": "#690005",
+            "surface-container-lowest": "#0c0e16",
+            "electric-blue": "#3B82F6",
+            "error": "#ffb4ab",
+            "surface-container": "#1d1f27",
+            "outline": "#8d90a0",
+            "inverse-on-surface": "#2e3039",
+            "tertiary-fixed": "#ffe088",
+            "primary-container": "#2563eb",
+            "surface-bright": "#373942",
+            "ai-purple": "#8B5CF6",
+            "secondary-container": "#414753",
+            "surface": "#11131b",
+            "surface-dim": "#11131b",
+            "on-primary-fixed-variant": "#003ea8",
+            "slate-400": "#94A3B8",
+            "error-red": "#EF4444",
+            "surface-tint": "#b4c5ff",
+            "secondary": "#c1c6d5",
+            "on-secondary": "#2b313c",
+            "outline-variant": "#434655",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-tertiary": "#3c2f00",
+            "secondary-fixed": "#dde2f1",
+            "on-tertiary-fixed": "#241a00",
+            "on-primary-container": "#eeefff",
+            "tertiary-fixed-dim": "#e9c349",
+            "on-primary": "#002a78",
+            "surface-container-highest": "#32343d",
+            "surface-container-low": "#191b23",
+            "secondary-fixed-dim": "#c1c6d5",
+            "on-tertiary-fixed-variant": "#574500",
+            "tertiary-container": "#cca72f",
+            "background": "#11131b",
+            "on-error-container": "#ffdad6",
+            "surface-variant": "#32343d",
+            "primary-fixed": "#dbe1ff",
+            "inverse-surface": "#e1e2ed",
+            "primary": "#b4c5ff",
+            "success-green": "#10B981",
+            "on-secondary-fixed": "#161c26",
+            "on-secondary-container": "#b0b5c3",
+            "on-secondary-fixed-variant": "#414753",
+            "gold": "#C4933F",
+            "gold-light": "#E5AF5A"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            gutter: "24px",
+            "card-padding": "24px",
+            "container-max": "1440px",
+            base: "8px",
+            "margin-page": "40px"
+          },
+          fontFamily: {
+            "body-md": ["Inter"],
+            "display-lg": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "title-md": ["Montserrat"],
+            "body-sm": ["Inter"],
+            "label-caps": ["IBM Plex Mono"],
+            "body-lg": ["Inter"],
+            "headline-lg-mobile": ["Montserrat"]
+          },
+          fontSize: {
+            "body-md":  ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm":  ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }],
+            "body-lg":  ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-panel {
+      background: rgba(30, 41, 59, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(51, 65, 85, 0.5);
+    }
+    .ai-pulse {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+      animation: pulse 3s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50%       { opacity: 1;   transform: scale(1.02); }
+    }
+    .attorney-strip {
+      width: 4px;
+      height: 100%;
+      position: absolute;
+      left: 0; top: 0;
+      border-radius: 4px 0 0 4px;
+    }
+    .mesh-bg {
+      background-image:
+        radial-gradient(at 0% 0%,   rgba(59, 130, 246, 0.15) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.10) 0, transparent 50%);
+    }
+    /* ── Module flip cards ── */
+    .flip-tile {
+      perspective: 1200px;
+      cursor: pointer;
+      min-height: 340px;
+    }
+    .flip-tile-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      transform-style: preserve-3d;
+      transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    .flip-tile.flipped .flip-tile-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+    }
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+  </style>
 </head>
-<body>
+<body class="bg-background text-on-surface font-body-md selection:bg-electric-blue selection:text-white overflow-x-hidden">
 
-  <!-- ===== NAV ===== -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" height="38">
-      </a>
-      <div class="nav-links">
-        <a href="#platform">Platform</a>
-        <a href="#modules">Modules</a>
-        <a href="#security">Security</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a href="#contact" class="btn-nav">Request Demo</a>
-      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+<!-- ===== NAV ===== -->
+<nav id="nav" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <a href="#" class="flex items-center gap-3">
+      <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-10 w-auto brightness-0 invert">
+    </a>
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#platform"       class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Platform</a>
+      <a href="#modules"        class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Modules</a>
+      <a href="why-iurisiq.html" class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Why IurisIQ</a>
+      <a href="#security"       class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Security</a>
+      <a href="#contact"        class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Contact</a>
     </div>
-  </nav>
+    <a href="#contact" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-headline-lg text-body-sm font-bold hover:bg-electric-blue transition-colors active:scale-95">
+      Start A Conversation
+    </a>
+  </div>
+</nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <canvas id="hero-canvas"></canvas>
-    <div class="hero-glow"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        AI-Powered Legal Practice Management
+<!-- ===== HERO ===== -->
+<section id="hero" class="relative min-h-screen flex items-center pt-24 overflow-hidden mesh-bg">
+  <div class="relative z-10 max-w-container-max mx-auto px-margin-page w-full text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
+
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full border border-outline-variant mb-6">
+        <span class="material-symbols-outlined text-electric-blue text-sm" style="font-variation-settings:'FILL' 1;">bolt</span>
+        <span class="font-label-caps text-label-caps text-electric-blue">AI-Powered Legal Practice Management</span>
       </div>
-      <h1 class="hero-title">
+      <h1 class="font-display-lg text-display-lg mb-6 leading-tight">
         Your Practice,<br>
-        <em>Elevated by Intelligence.</em>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-ai-purple italic">Elevated by Intelligence.</span>
       </h1>
-      <p class="hero-sub">
-        IurisIQ is the modular case management portal built exclusively for small law offices —
-        where AI amplifies your practice without ever compromising client confidentiality.
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10 mx-auto lg:mx-0">
+        IurisIQ is the modular case management portal built exclusively for small law offices — where AI amplifies your practice without ever compromising client confidentiality.
       </p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn-primary">Request a Demo</a>
-        <a href="#platform" class="btn-ghost">
-          <svg viewBox="0 0 20 20" fill="none" width="16" height="16"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M8 7l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Explore the Platform
-        </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <a href="#contact" class="bg-electric-blue text-white px-8 py-4 rounded-xl font-headline-lg text-body-md ai-pulse text-center">Start A Conversation</a>
+        <a href="#platform" class="border border-outline-variant text-on-surface px-8 py-4 rounded-xl font-headline-lg text-body-md hover:bg-surface-container-high transition-colors text-center">Explore the Platform</a>
       </div>
     </div>
-    <div class="hero-scroll-hint">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
+
+    <div class="hidden lg:block relative">
+      <div class="glass-panel p-4 rounded-2xl shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+        <img class="rounded-xl w-full" alt="IurisIQ portal dashboard preview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALuMnJ2OFIIZKZTXM-e72mCUoUzyXKAlbVD5LtcDTdmg_TcMqYAVpdOMjRUQD7eyf8dvnLPGxkxX0VxswbcVLECCCnamkKKhS4MjjOOFUy-dY9qXLKFGV0K2QhU0Y83KIiEIaZ-mcLrNwSCXc7Rp8BSAntjZExKF4kb1Su3FNAEkd6KoDbrAP5X2gXQwvd9DvCTK5Ww2MWDDf6ZhmQUHGs8hSQ4TNNu6Fzz2LzCXR4XVxWnqC6jjAOMwl-Vi3E62ZoynH6cXicyiZ7">
+      </div>
+      <div class="absolute -bottom-8 -left-8 glass-panel p-6 rounded-xl ai-pulse max-w-xs">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="material-symbols-outlined text-ai-purple">psychology</span>
+          <span class="font-label-caps text-label-caps">AI Insight</span>
+        </div>
+        <p class="text-body-sm font-body-sm italic text-on-surface-variant">"Drafting memo for Matter #402. Previous rulings suggest a favorable outcome based on 'Doctrine of Sovereign Immunity'."</p>
+      </div>
     </div>
-  </section>
 
-  <!-- ===== TWO PILLARS ===== -->
-  <section class="pillars" id="platform">
-    <div class="pillars-header">
-      <p class="section-label">Foundation</p>
-      <h2>Built on Two Uncompromising Pillars</h2>
-      <p class="section-sub">Every decision in IurisIQ traces back to these principles. Not marketing — architecture.</p>
+  </div>
+</section>
+
+<!-- ===== TWO PILLARS ===== -->
+<section id="platform" class="py-32 px-margin-page max-w-container-max mx-auto">
+  <div class="text-center mb-20">
+    <span class="font-label-caps text-label-caps text-electric-blue block mb-4 uppercase">Foundation</span>
+    <h2 class="font-headline-lg text-headline-lg mb-6">Built on Two Uncompromising Pillars</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Every decision in IurisIQ traces back to these principles. Not marketing — architecture.</p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <!-- Radical Customization -->
+    <div class="group relative bg-surface-container rounded-3xl p-card-padding border border-outline-variant/30 hover:border-electric-blue/50 transition-all duration-300">
+      <div class="mb-8">
+        <div class="w-16 h-16 bg-primary-container/20 rounded-2xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-electric-blue text-4xl">widgets</span>
+        </div>
+        <span class="font-label-caps text-label-caps text-on-surface-variant mb-2 block">01</span>
+        <h3 class="font-headline-lg text-title-md mb-4">Radical Customization</h3>
+        <p class="font-body-md text-on-surface-variant mb-8">Every firm is different. IurisIQ starts with a rock-solid core and lets you build outward — snapping in purpose-built modules for the exact workflows your practice needs. It shapes itself to you.</p>
+      </div>
+      <ul class="space-y-4 mb-10">
+        <li class="flex items-center gap-3 text-body-sm">
+          <span class="material-symbols-outlined text-electric-blue text-lg">check_circle</span>
+          Core portal ships with every deployment
+        </li>
+        <li class="flex items-center gap-3 text-body-sm">
+          <span class="material-symbols-outlined text-electric-blue text-lg">check_circle</span>
+          Modular add-ons activate with a single switch
+        </li>
+        <li class="flex items-center gap-3 text-body-sm">
+          <span class="material-symbols-outlined text-electric-blue text-lg">check_circle</span>
+          Bespoke modules built to your exact spec
+        </li>
+        <li class="flex items-center gap-3 text-body-sm">
+          <span class="material-symbols-outlined text-electric-blue text-lg">check_circle</span>
+          Per-client branding and configuration
+        </li>
+      </ul>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-electric-blue/15 text-electric-blue rounded text-[10px] font-label-caps border border-electric-blue/30">Core Portal</span>
+        <span class="px-3 py-1 bg-electric-blue/15 text-electric-blue rounded text-[10px] font-label-caps border border-electric-blue/30">Documents</span>
+        <span class="px-3 py-1 bg-electric-blue/15 text-electric-blue rounded text-[10px] font-label-caps border border-electric-blue/30">Tasks</span>
+        <span class="px-3 py-1 bg-surface-container-high rounded text-[10px] font-label-caps border border-outline-variant text-on-surface-variant">Billing</span>
+        <span class="px-3 py-1 bg-surface-container-high rounded text-[10px] font-label-caps border border-outline-variant text-on-surface-variant">AI Brain</span>
+        <span class="px-3 py-1 bg-gold/20 text-gold-light rounded text-[10px] font-label-caps border border-gold/30">+ Custom</span>
+      </div>
     </div>
 
-    <div class="pillars-grid">
-
-      <!-- Pillar 1: Customization -->
-      <div class="pillar pillar--light">
-        <div class="pillar-eyebrow">
-          <span class="pillar-num">01</span>
-          <div class="pillar-icon">
-            <svg viewBox="0 0 56 56" fill="none">
-              <rect x="4" y="4" width="19" height="19" rx="3" stroke="currentColor" stroke-width="1.8"/>
-              <rect x="4" y="33" width="19" height="19" rx="3" stroke="currentColor" stroke-width="1.8"/>
-              <rect x="33" y="4" width="19" height="19" rx="3" stroke="currentColor" stroke-width="1.8"/>
-              <rect x="33" y="33" width="19" height="19" rx="3" stroke="currentColor" stroke-width="1.8" stroke-dasharray="4 2.5" opacity="0.5"/>
-              <path d="M23 13.5h10M13.5 23v10M42.5 23v10M23 42.5h10" stroke="currentColor" stroke-width="1.2" opacity="0.35"/>
-              <circle cx="42.5" cy="42.5" r="5" fill="currentColor" opacity="0.2"/>
-              <path d="M38 42.5h-5M42.5 38v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+    <!-- Uncompromising Security -->
+    <div class="group relative bg-slate-900 rounded-3xl p-card-padding border border-outline-variant/30 hover:border-success-green/50 transition-all duration-300 overflow-hidden">
+      <div class="relative z-10">
+        <div class="w-16 h-16 bg-success-green/20 rounded-2xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-success-green text-4xl">shield_lock</span>
+        </div>
+        <span class="font-label-caps text-label-caps text-on-surface-variant mb-2 block">02</span>
+        <h3 class="font-headline-lg text-title-md mb-4 text-white">Uncompromising Security</h3>
+        <p class="font-body-md text-slate-400 mb-8">Attorney-client privilege doesn't pause when you use AI — and with IurisIQ, it doesn't have to. Your clients' data never trains external models, never leaves your environment, and is protected at every layer.</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 bg-slate-800/50 border border-slate-700 rounded-xl">
+            <span class="material-symbols-outlined text-electric-blue mb-2">dns</span>
+            <p class="font-label-caps text-[10px] text-slate-400 uppercase">Tenant Isolation</p>
+          </div>
+          <div class="p-4 bg-slate-800/50 border border-slate-700 rounded-xl">
+            <span class="material-symbols-outlined text-electric-blue mb-2">groups</span>
+            <p class="font-label-caps text-[10px] text-slate-400 uppercase">RBAC Enforced</p>
+          </div>
+          <div class="p-4 bg-slate-800/50 border border-slate-700 rounded-xl">
+            <span class="material-symbols-outlined text-electric-blue mb-2">lock</span>
+            <p class="font-label-caps text-[10px] text-slate-400 uppercase">Encrypted at Rest</p>
+          </div>
+          <div class="p-4 bg-slate-800/50 border border-slate-700 rounded-xl">
+            <span class="material-symbols-outlined text-electric-blue mb-2">update</span>
+            <p class="font-label-caps text-[10px] text-slate-400 uppercase">Nightly Backups</p>
           </div>
         </div>
-        <h3>Radical Customization</h3>
-        <p>Every firm is different. IurisIQ starts with a rock-solid core and lets you build outward — snapping in purpose-built modules for the exact workflows your practice needs. It shapes itself to you.</p>
-        <ul class="pillar-points">
-          <li>Core portal ships with every deployment</li>
-          <li>Modular add-ons activate with a single switch</li>
-          <li>Bespoke modules built to your exact spec</li>
-          <li>Per-client branding and configuration</li>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CORE PLATFORM ===== -->
+<section id="core" class="bg-surface-container-low py-32">
+  <div class="max-w-container-max mx-auto px-margin-page">
+    <div class="text-center mb-20">
+      <span class="font-label-caps text-label-caps text-electric-blue block mb-4 uppercase">Core Platform</span>
+      <h2 class="font-headline-lg text-headline-lg mb-6">Everything Included.<br>Nothing Negotiated.</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">Every IurisIQ deployment ships with the complete core — not a stripped base that charges extra for the essentials you actually need.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20 hover:border-electric-blue/40 transition-colors">
+        <span class="material-symbols-outlined text-electric-blue mb-4 block">person_book</span>
+        <h4 class="font-headline-lg text-body-lg mb-3">Secure Login &amp; RBAC</h4>
+        <p class="font-body-sm text-on-surface-variant">Staff and client auth with flexible, data-driven roles enforced at the database row level — not just the UI.</p>
+      </div>
+
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20 hover:border-electric-blue/40 transition-colors">
+        <span class="material-symbols-outlined text-electric-blue mb-4 block">account_balance_wallet</span>
+        <h4 class="font-headline-lg text-body-lg mb-3">Client &amp; Matter Cards</h4>
+        <p class="font-body-sm text-on-surface-variant">Configurable matter schemas for any practice area. Never locked to a single specialty.</p>
+      </div>
+
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20 hover:border-electric-blue/40 transition-colors">
+        <span class="material-symbols-outlined text-electric-blue mb-4 block">fort</span>
+        <h4 class="font-headline-lg text-body-lg mb-3">Client Portal</h4>
+        <p class="font-body-sm text-on-surface-variant">Clients log in to their own secure space — view their matter, upload documents, track progress. No phone tag.</p>
+      </div>
+
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20 hover:border-electric-blue/40 transition-colors">
+        <span class="material-symbols-outlined text-electric-blue mb-4 block">inventory_2</span>
+        <h4 class="font-headline-lg text-body-lg mb-3">Document Vault</h4>
+        <p class="font-body-sm text-on-surface-variant">Secure storage with enterprise-grade malware scanning. Every file scanned before anyone can open it.</p>
+      </div>
+
+      <div class="p-8 bg-slate-900 border-2 border-ai-purple/30 rounded-2xl relative overflow-hidden hover:border-ai-purple/60 transition-colors">
+        <div class="absolute top-0 right-0 p-2 bg-ai-purple text-white font-label-caps text-[8px] rounded-bl-lg">STANDOUT FEATURE</div>
+        <span class="material-symbols-outlined text-ai-purple mb-4 block">auto_mode</span>
+        <h4 class="font-headline-lg text-body-lg mb-3">Smart Reminder Engine</h4>
+        <p class="font-body-sm text-on-surface-variant">Trigger-based lifecycle reminders: "X days after Y event, remind staff to do Z." Runs on schedule automatically.</p>
+      </div>
+
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20 hover:border-electric-blue/40 transition-colors relative">
+        <div class="attorney-strip bg-electric-blue"></div>
+        <span class="material-symbols-outlined text-electric-blue mb-4 block">palette</span>
+        <h4 class="font-headline-lg text-body-lg mb-3">Attorney Color Coding</h4>
+        <p class="font-body-sm text-on-surface-variant">Visually tag matters to their assigned attorney. Scan the dashboard and know who owns what — instantly.</p>
+      </div>
+
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20 hover:border-electric-blue/40 transition-colors">
+        <span class="material-symbols-outlined text-electric-blue mb-4 block">mail</span>
+        <h4 class="font-headline-lg text-body-lg mb-3">Email Notifications</h4>
+        <p class="font-body-sm text-on-surface-variant">Instant alerts on uploads, activity, and deadlines. Staff and clients stay informed without you lifting a finger.</p>
+      </div>
+
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20 hover:border-electric-blue/40 transition-colors">
+        <span class="material-symbols-outlined text-electric-blue mb-4 block">cloud_done</span>
+        <h4 class="font-headline-lg text-body-lg mb-3">Security &amp; Backups</h4>
+        <p class="font-body-sm text-on-surface-variant">Nightly encrypted offsite backups with a tested restore runbook. Row-level tenant isolation. Sleep easy.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODULES ===== -->
+<section id="modules" class="py-32 px-margin-page max-w-container-max mx-auto">
+  <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+    <div class="max-w-2xl">
+      <span class="font-label-caps text-label-caps text-ai-purple block mb-4 uppercase">Modularity</span>
+      <h2 class="font-headline-lg text-headline-lg mb-6">Grow Exactly as You Need</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">Start with the Core. Add capability when — and only when — your practice is ready. Every module plugs into your existing portal the day it's activated.</p>
+    </div>
+    <div class="flex gap-2">
+      <span class="font-label-caps text-[10px] px-2 py-1 border border-outline-variant rounded text-on-surface-variant">A — I PLUGINS</span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/20 border border-outline-variant/20 rounded-3xl overflow-hidden">
+
+    <!-- Module A — Secure Messaging -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="mb-6">
+            <span class="font-label-caps text-[10px] text-electric-blue bg-electric-blue/10 px-2 py-1 rounded">HIGH VALUE</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Secure Messaging</h5>
+          <p class="font-body-sm text-on-surface-variant">Threaded, searchable, documented communication between firm and clients. Encrypted in-portal messaging with a full audit trail.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for demo</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-caps text-[9px] text-electric-blue bg-electric-blue/10 px-2 py-0.5 rounded">HIGH VALUE</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <img src="Screenshots/MessagesPage.png" alt="Secure messaging interface" class="w-full rounded-lg mb-3 object-cover object-top flex-none" style="max-height:130px">
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-2 text-on-surface">Secure Messaging</h6>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Threaded client conversations, searchable forever</li>
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>SMS and WhatsApp threading coming in v2</li>
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Every message timestamped and audit-logged</li>
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Replaces scattered texts and personal email</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module B — Client E-Signature -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="mb-6">
+            <span class="font-label-caps text-[10px] text-electric-blue bg-electric-blue/10 px-2 py-1 rounded">HIGH VALUE</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Client E-Signature</h5>
+          <p class="font-body-sm text-on-surface-variant">SHA-256 integrity and full audit trail. Legally sound, frictionless for clients, and documented forever.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for demo</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-caps text-[9px] text-electric-blue bg-electric-blue/10 px-2 py-0.5 rounded">HIGH VALUE</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <img src="Screenshots/eSignPage.png" alt="E-signature interface" class="w-full rounded-lg mb-3 object-cover object-top flex-none" style="max-height:130px">
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-2 text-on-surface">Client E-Signature</h6>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>SHA-256 integrity hash per document, every time</li>
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Full audit trail: who signed, when, from where</li>
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Send, track, and store — all in one flow</li>
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Legally sound in all 50 states</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module C — Document Drafting -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="mb-6">
+            <span class="font-label-caps text-[10px] text-success-green bg-success-green/10 px-2 py-1 rounded uppercase">Automation</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Document Drafting</h5>
+          <p class="font-body-sm text-on-surface-variant">Generate documents from your firm's templates instantly. Less time drafting, more time practicing.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for demo</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-caps text-[9px] text-success-green bg-success-green/10 px-2 py-0.5 rounded uppercase">Automation</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <img src="Screenshots/DocIntake.png" alt="Document drafting interface" class="w-full rounded-lg mb-3 object-cover object-top flex-none" style="max-height:130px">
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-2 text-on-surface">Document Drafting</h6>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-success-green shrink-0">→</span>Build your template library once, reuse forever</li>
+            <li class="flex gap-2"><span class="text-success-green shrink-0">→</span>Auto-fills from matter and client data on file</li>
+            <li class="flex gap-2"><span class="text-success-green shrink-0">→</span>Retainer, demand letter, fee agreement — any format</li>
+            <li class="flex gap-2"><span class="text-success-green shrink-0">→</span>Send directly for e-signature in one click</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module D — AI Brain (special dark tile) -->
+    <div class="flip-tile group border-2 border-ai-purple/50">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-slate-900 group-hover:bg-slate-800 transition-colors flex flex-col">
+          <div class="flex justify-between items-center mb-6">
+            <span class="font-label-caps text-[10px] text-ai-purple bg-ai-purple/20 px-2 py-1 rounded uppercase">AI-Powered</span>
+            <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-1 rounded uppercase">Coming Soon</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">AI Brain</h5>
+          <p class="font-body-sm text-slate-400">Private conversational AI to query firm documents, judge preferences, county policies, and institutional knowledge.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-slate-600 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for demo</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-slate-800 flex flex-col">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-label-caps text-[9px] text-ai-purple bg-ai-purple/20 px-2 py-0.5 rounded uppercase">AI-Powered</span>
+            <span class="font-label-caps text-[9px] text-slate-600 uppercase select-none">↺ flip back</span>
+          </div>
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-1 text-on-surface">AI Brain</h6>
+          <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-0.5 rounded uppercase mb-2 self-start">In active development</span>
+          <p class="text-[11px] font-body-sm text-slate-500 italic mb-3">"What's Judge Martinez's stance on continuances?"</p>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-slate-400">
+            <li class="flex gap-2"><span class="text-ai-purple shrink-0">→</span>Ask questions in plain English, get firm-specific answers</li>
+            <li class="flex gap-2"><span class="text-ai-purple shrink-0">→</span>Trained on your documents, notes, and case history</li>
+            <li class="flex gap-2"><span class="text-ai-purple shrink-0">→</span>Accesses county policies and prior rulings on demand</li>
+            <li class="flex gap-2"><span class="text-ai-purple shrink-0">→</span>Single-tenant — your AI context is never shared</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module E — Time & Billing -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="flex justify-between items-center mb-6">
+            <span class="font-label-caps text-[10px] text-tertiary bg-tertiary/10 px-2 py-1 rounded uppercase">Revenue</span>
+            <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-1 rounded uppercase">Coming Soon</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Time &amp; Billing</h5>
+          <p class="font-body-sm text-on-surface-variant">Start/stop timers tied to matters, exports to QuickBooks. Never lose a billable hour to a forgotten entry.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for demo</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-label-caps text-[9px] text-tertiary bg-tertiary/10 px-2 py-0.5 rounded uppercase">Revenue</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-1 text-on-surface">Time &amp; Billing</h6>
+          <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-0.5 rounded uppercase mb-2 self-start">In active development</span>
+          <p class="text-[11px] font-body-sm text-on-surface-variant/60 italic mb-3">The most preventable revenue loss is time never captured.</p>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>One-tap start/stop timers linked to matters and tasks</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Automatic time capture available across the platform</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Direct QuickBooks export or built-in invoice generation</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Attorney-by-attorney breakdowns for firm visibility</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module F — CEO Dashboard -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="mb-6">
+            <span class="font-label-caps text-[10px] text-primary bg-primary/10 px-2 py-1 rounded uppercase">Analytics</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">CEO Dashboard</h5>
+          <p class="font-body-sm text-on-surface-variant">Bespoke KPI dashboard integrating Stripe, QuickBooks, calendars, and payroll data in one view.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for demo</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-caps text-[9px] text-primary bg-primary/10 px-2 py-0.5 rounded uppercase">Analytics</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <img src="Screenshots/Dashboard.png" alt="CEO dashboard" class="w-full rounded-lg mb-3 object-cover object-top flex-none" style="max-height:130px">
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-2 text-on-surface">CEO Dashboard</h6>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-primary shrink-0">→</span>Live KPIs: revenue, caseload, and open matters</li>
+            <li class="flex gap-2"><span class="text-primary shrink-0">→</span>Integrates Stripe, QuickBooks, calendars, and payroll</li>
+            <li class="flex gap-2"><span class="text-primary shrink-0">→</span>Built to your firm's specific metrics, not a template</li>
+            <li class="flex gap-2"><span class="text-primary shrink-0">→</span>Fully responsive from phone to 4K monitor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module G — Conflict Checker -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="mb-6">
+            <span class="font-label-caps text-[10px] text-error-red bg-error-red/10 px-2 py-1 rounded uppercase">Risk Mgmt</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Conflict Checker</h5>
+          <p class="font-body-sm text-on-surface-variant">Search every client, matter, and party in seconds before taking a new case. Catch conflicts before they become problems.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for demo</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-caps text-[9px] text-error-red bg-error-red/10 px-2 py-0.5 rounded uppercase">Risk Mgmt</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <img src="Screenshots/ConflictCheck.png" alt="Conflict checker interface" class="w-full rounded-lg mb-3 object-cover object-top flex-none" style="max-height:130px">
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-2 text-on-surface">Conflict Checker</h6>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-error-red shrink-0">→</span>Searches clients, parties, matters, and counsel</li>
+            <li class="flex gap-2"><span class="text-error-red shrink-0">→</span>Results returned in under two seconds</li>
+            <li class="flex gap-2"><span class="text-error-red shrink-0">→</span>Flags potential conflicts with clear explainability</li>
+            <li class="flex gap-2"><span class="text-error-red shrink-0">→</span>Full log for bar compliance and documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module H — Calendar Integration -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="mb-6">
+            <span class="font-label-caps text-[10px] text-success-green bg-success-green/10 px-2 py-1 rounded uppercase">Productivity</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Calendar Integration</h5>
+          <p class="font-body-sm text-on-surface-variant">Hearings, deadlines, and appointments synced with the calendar your firm already uses. Supports iCal subscriptions.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for demo</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-caps text-[9px] text-success-green bg-success-green/10 px-2 py-0.5 rounded uppercase">Productivity</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <img src="Screenshots/calendarintegrationspage.png" alt="Calendar integration" class="w-full rounded-lg mb-3 object-cover object-top flex-none" style="max-height:130px">
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-2 text-on-surface">Calendar Integration</h6>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-success-green shrink-0">→</span>Syncs with Google Calendar and Outlook natively</li>
+            <li class="flex gap-2"><span class="text-success-green shrink-0">→</span>iCal subscription links for any calendar app</li>
+            <li class="flex gap-2"><span class="text-success-green shrink-0">→</span>Hearings, deadlines, and appointments in one view</li>
+            <li class="flex gap-2"><span class="text-success-green shrink-0">→</span>Matter-linked events auto-populated from case data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module I — Document Translation -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="mb-6">
+            <span class="font-label-caps text-[10px] text-gold-light bg-gold/10 px-2 py-1 rounded uppercase">Client Service</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Document Translation</h5>
+          <p class="font-body-sm text-on-surface-variant">Translate client documents directly in the portal. Spanish to English included; other languages on request.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for demo</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-label-caps text-[9px] text-gold-light bg-gold/10 px-2 py-0.5 rounded uppercase">Client Service</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-1 text-on-surface">Document Translation</h6>
+          <p class="text-[11px] font-body-sm text-on-surface-variant/60 italic mb-3">Language barriers shouldn't be intake barriers.</p>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-gold-light shrink-0">→</span>Native Spanish ↔ English translation built in</li>
+            <li class="flex gap-2"><span class="text-gold-light shrink-0">→</span>Translate intake forms, agreements, and letters in-portal</li>
+            <li class="flex gap-2"><span class="text-gold-light shrink-0">→</span>AI-assisted, validated for legal terminology accuracy</li>
+            <li class="flex gap-2"><span class="text-gold-light shrink-0">→</span>Additional languages scoped and delivered on request</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module + — Bespoke (spans 3 cols) -->
+    <div class="flip-tile group lg:col-span-3">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface-container group-hover:bg-surface-container-high transition-colors flex flex-col">
+          <div class="mb-6">
+            <span class="font-label-caps text-[10px] text-on-surface-variant bg-surface/50 px-2 py-1 rounded uppercase">On Request</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Bespoke Modules</h5>
+          <p class="font-body-sm text-on-surface-variant">If the menu doesn't cover your workflow, we build it. Custom modules are scoped, designed, and delivered to your exact specification.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for details</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-8 bg-surface-container-high flex flex-col lg:flex-row lg:gap-12 lg:items-center">
+          <div class="flex-1">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-label-caps text-[9px] text-on-surface-variant bg-surface/50 px-2 py-0.5 rounded uppercase">On Request</span>
+              <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+            </div>
+            <h6 class="font-headline-lg text-[18px] font-semibold mb-2 text-on-surface">Build What You Need</h6>
+            <p class="text-[12px] font-body-sm text-on-surface-variant/70 mb-4">We scope, design, and deliver custom modules to spec — built on the same platform, no new logins, no integrations.</p>
+            <ul class="space-y-2 text-[12px] font-body-sm text-on-surface-variant">
+              <li class="flex gap-2"><span class="text-on-surface-variant shrink-0">→</span>Describe the workflow — we architect the solution</li>
+              <li class="flex gap-2"><span class="text-on-surface-variant shrink-0">→</span>Scoped, priced, and confirmed in writing before we start</li>
+              <li class="flex gap-2"><span class="text-on-surface-variant shrink-0">→</span>Owned by your firm, maintained by ours</li>
+              <li class="flex gap-2"><span class="text-on-surface-variant shrink-0">→</span>Typical delivery within a single engagement sprint</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SECURITY DEEP DIVE ===== -->
+<section id="security" class="py-32 bg-surface overflow-hidden relative">
+  <div class="max-w-container-max mx-auto px-margin-page grid lg:grid-cols-2 gap-20 items-center">
+
+    <div>
+      <span class="font-label-caps text-label-caps text-success-green block mb-4 uppercase">Confidentiality First</span>
+      <h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">Your Clients' Secrets Stay Yours.</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+        Our AI architecture is designed from the ground up around one principle: <strong class="text-on-surface">your clients' information never leaves your controlled environment.</strong> Unlike generic AI tools, IurisIQ operates in an isolated, single-tenant deployment where the AI works <em>with</em> your data — and only for your firm.
+      </p>
+      <div class="space-y-8">
+        <div class="flex gap-6 group">
+          <div class="font-label-caps text-success-green group-hover:scale-110 transition-transform flex-none">01</div>
+          <div>
+            <h6 class="font-headline-lg text-body-md mb-2">Isolated Tenant Architecture</h6>
+            <p class="font-body-sm text-on-surface-variant">Your firm's database, storage, and AI context are completely separated from any other client. There is no shared pool — ever.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 group">
+          <div class="font-label-caps text-success-green group-hover:scale-110 transition-transform flex-none">02</div>
+          <div>
+            <h6 class="font-headline-lg text-body-md mb-2">AI That Doesn't Learn From Your Data</h6>
+            <p class="font-body-sm text-on-surface-variant">Your documents serve as AI context. They are never used to retrain or improve any external model. Your knowledge stays yours.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 group">
+          <div class="font-label-caps text-success-green group-hover:scale-110 transition-transform flex-none">03</div>
+          <div>
+            <h6 class="font-headline-lg text-body-md mb-2">Database-Enforced Access Control</h6>
+            <p class="font-body-sm text-on-surface-variant">Role permissions are enforced at the database row level. Even a misconfigured UI can't expose data it shouldn't see.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 group">
+          <div class="font-label-caps text-success-green group-hover:scale-110 transition-transform flex-none">04</div>
+          <div>
+            <h6 class="font-headline-lg text-body-md mb-2">Malware Scanning on Every Upload</h6>
+            <p class="font-body-sm text-on-surface-variant">Every file — from clients or staff — is scanned by a commercial antivirus engine before it's visible. Infected files are deleted automatically.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 group">
+          <div class="font-label-caps text-success-green group-hover:scale-110 transition-transform flex-none">05</div>
+          <div>
+            <h6 class="font-headline-lg text-body-md mb-2">Nightly Encrypted Backups</h6>
+            <p class="font-body-sm text-on-surface-variant">Your data is backed up nightly to encrypted offsite storage with a tested, documented restore procedure. We've run the drill.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="relative w-full aspect-square flex items-center justify-center">
+        <div class="absolute inset-0 border-2 border-outline-variant/10 rounded-full animate-[spin_20s_linear_infinite]"></div>
+        <div class="absolute inset-8 border border-outline-variant/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+        <div class="absolute inset-16 border-4 border-electric-blue/10 rounded-full"></div>
+        <div class="z-10 bg-surface-container p-12 rounded-full border-2 border-success-green shadow-[0_0_50px_rgba(16,185,129,0.2)] text-center">
+          <span class="material-symbols-outlined text-6xl text-success-green mb-4 block" style="font-variation-settings:'FILL' 1;">verified_user</span>
+          <p class="font-label-caps text-[10px] uppercase text-success-green">Client Privilege<br>Protected</p>
+        </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface-container border border-outline-variant px-4 py-2 rounded-full font-label-caps text-[10px]">ISOLATED TENANTS</div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-surface-container border border-outline-variant px-4 py-2 rounded-full font-label-caps text-[10px]">ZERO DATA LEAK</div>
+        <div class="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface-container border border-outline-variant px-4 py-2 rounded-full font-label-caps text-[10px] rotate-90">RBAC ENFORCED</div>
+        <div class="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 bg-surface-container border border-outline-variant px-4 py-2 rounded-full font-label-caps text-[10px] -rotate-90">ENCRYPTED BACKUPS</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="py-32 bg-surface-container-low">
+  <div class="max-w-container-max mx-auto px-margin-page">
+    <div class="text-center mb-20">
+      <span class="font-label-caps text-label-caps text-electric-blue block mb-4 uppercase">Getting Started</span>
+      <h2 class="font-headline-lg text-headline-lg mb-6">Up and Running in Three Steps</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20">
+        <div class="font-label-caps text-label-caps text-electric-blue mb-4">01</div>
+        <h4 class="font-headline-lg text-title-md mb-4">Discovery Conversation</h4>
+        <p class="font-body-sm text-on-surface-variant">We learn your practice, your workflows, and your friction points. No canned demo — a real conversation about what actually slows you down.</p>
+      </div>
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20">
+        <div class="font-label-caps text-label-caps text-electric-blue mb-4">02</div>
+        <h4 class="font-headline-lg text-title-md mb-4">Core Deployment</h4>
+        <p class="font-body-sm text-on-surface-variant">Your isolated portal is configured, branded, and delivered. Staff and clients get access. The full core is live and running.</p>
+      </div>
+      <div class="p-8 bg-surface rounded-2xl border border-outline-variant/20">
+        <div class="font-label-caps text-label-caps text-electric-blue mb-4">03</div>
+        <h4 class="font-headline-lg text-title-md mb-4">Grow by Module</h4>
+        <p class="font-body-sm text-on-surface-variant">As your needs evolve, new modules are activated or built to spec. Your portal grows with your practice, on your timeline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT / CTA ===== -->
+<section id="contact" class="py-32 px-margin-page max-w-container-max mx-auto">
+  <div class="bg-slate-900 rounded-[3rem] p-12 lg:p-24 overflow-hidden relative border border-outline-variant/30">
+
+    <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="font-label-caps text-label-caps text-electric-blue block mb-4 uppercase">Ready to Begin?</span>
+        <h2 class="font-display-lg text-headline-lg mb-8 leading-tight">Let's Talk About Your Practice</h2>
+        <p class="font-body-lg text-body-lg text-slate-400 mb-10">
+          IurisIQ is deployed for law firms by a team that has built it from the ground up — not a vendor licensing a generic platform. Schedule a conversation and let's find out if it's the right fit.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-4 text-slate-300">
+            <span class="material-symbols-outlined text-electric-blue">lock</span>
+            Private. Isolated. Purpose-built for law.
+          </li>
+          <li class="flex items-center gap-4 text-slate-300">
+            <span class="material-symbols-outlined text-electric-blue">view_quilt</span>
+            Modular — start with what you need.
+          </li>
+          <li class="flex items-center gap-4 text-slate-300">
+            <span class="material-symbols-outlined text-electric-blue">speed</span>
+            Delivered fast.
+          </li>
         </ul>
-        <div class="module-chips-demo">
-          <div class="chip chip--on">Core Portal</div>
-          <div class="chip chip--on">Documents</div>
-          <div class="chip chip--on">Tasks</div>
-          <div class="chip chip--off">e-Signature</div>
-          <div class="chip chip--off">Messaging</div>
-          <div class="chip chip--off">AI Brain</div>
-          <div class="chip chip--off">Billing</div>
-          <div class="chip chip--add">+ Custom</div>
-        </div>
       </div>
 
-      <!-- Pillar 2: Security -->
-      <div class="pillar pillar--dark">
-        <div class="pillar-eyebrow">
-          <span class="pillar-num">02</span>
-          <div class="pillar-icon">
-            <svg viewBox="0 0 56 56" fill="none">
-              <path d="M28 4L6 13.5V28C6 41 15.8 52.5 28 56C40.2 52.5 50 41 50 28V13.5L28 4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M19.5 28l6 6L38 22" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="28" cy="28" r="9" stroke="currentColor" stroke-width="1" opacity="0.2"/>
-              <circle cx="28" cy="28" r="16" stroke="currentColor" stroke-width="1" opacity="0.1"/>
-            </svg>
-          </div>
-        </div>
-        <h3>Uncompromising Security</h3>
-        <p>Attorney-client privilege doesn't pause when you use AI — and with IurisIQ, it doesn't have to. Your clients' data never trains external models, never leaves your environment, and is protected at every layer.</p>
-        <ul class="pillar-points pillar-points--light">
-          <li>Single-tenant isolation per firm</li>
-          <li>AI that never exposes client data externally</li>
-          <li>Role-based access control, database-enforced</li>
-          <li>Every upload virus-scanned before anyone sees it</li>
-          <li>Nightly encrypted backups with tested restore</li>
-        </ul>
-        <div class="trust-grid">
-          <div class="trust-item">
-            <svg viewBox="0 0 20 20" fill="none" width="16"><path d="M10 2L2 6v6c0 4.4 3.2 8.5 8 10 4.8-1.5 8-5.6 8-10V6L10 2z" stroke="currentColor" stroke-width="1.5"/></svg>
-            Tenant Isolation
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 20 20" fill="none" width="16"><rect x="5" y="9" width="10" height="8" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7 9V6a3 3 0 116 0v3" stroke="currentColor" stroke-width="1.5"/></svg>
-            RBAC Enforced
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 20 20" fill="none" width="16"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            Encrypted at Rest
-          </div>
-          <div class="trust-item">
-            <svg viewBox="0 0 20 20" fill="none" width="16"><path d="M10 3v7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/></svg>
-            Nightly Backups
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== CORE PLATFORM ===== -->
-  <section class="core-platform" id="core">
-    <div class="container">
-      <div class="core-header">
-        <p class="section-label">Core Platform</p>
-        <h2>Everything Included.<br>Nothing Negotiated.</h2>
-        <p class="section-sub">Every IurisIQ deployment ships with the complete core — not a stripped base that charges extra for the essentials you actually need.</p>
-      </div>
-      <div class="features-grid">
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><path d="M14 3L3 8.5v7c0 6.5 4.5 12.5 11 14.5 6.5-2 11-8 11-14.5v-7L14 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          </div>
-          <h4>Secure Login &amp; RBAC</h4>
-          <p>Staff and client auth with flexible, data-driven roles. Per-module access enforced at the database row level — not just the UI.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><rect x="3" y="5" width="22" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h12M8 17h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h4>Client &amp; Matter Cards</h4>
-          <p>Configurable matter schemas for any practice area — family law, immigration, general practice, and beyond. Never locked to a single specialty.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><path d="M7 3h14a2 2 0 012 2v18a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z" stroke="currentColor" stroke-width="1.5"/><path d="M10 10h8M10 14h8M10 18h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h4>Document Vault</h4>
-          <p>Secure upload and storage for clients and staff. Every file is scanned for malware by an enterprise-grade antivirus engine before anyone can open it. Cloud-backed with signed access, audit trails, and matter-level organization.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><path d="M10 5H7a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2h-3" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="3" width="8" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M9 14l2.5 2.5L19 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h4>Document Tracking</h4>
-          <p>Per-matter document checklists with live status. Always know what's been received and what's still outstanding.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><path d="M5 13h4l3-8 4 16 3-8h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h4>Task Assignment</h4>
-          <p>Assign, track, and complete tasks across your team. Full visibility on what's in progress, who owns it, and what's overdue.</p>
-        </div>
-
-        <div class="feature-card feature-card--gold reveal">
-          <div class="feature-badge-label">Standout Feature</div>
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M14 8v6l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M5 22l3.5-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h4>Smart Reminder Engine</h4>
-          <p>Trigger-based lifecycle reminders: "X days after Y event, remind staff to draft Z." Your practice runs on schedule — automatically, without manual follow-up.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><rect x="3" y="7" width="22" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M14 3v4M3 11l11 7 11-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h4>Email Notifications</h4>
-          <p>Instant alerts on uploads, activity, and deadlines. Staff and clients stay informed without you lifting a finger.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 18l4-7 4 5 2-3 3 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h4>Admin Dashboard</h4>
-          <p>Practice-wide at-a-glance overview. Matters, tasks, documents, and team activity in one clean morning view.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M14 9v5M11 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="14" r="3" stroke="currentColor" stroke-width="1" opacity="0.3"/></svg>
-          </div>
-          <h4>Branding &amp; Module Registry</h4>
-          <p>Per-client theming and the on/off switch for every module. Configure each deployment exactly the way your firm works.</p>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 28 28" fill="none"><path d="M14 3L3 8.5v7c0 6.5 4.5 12.5 11 14.5 6.5-2 11-8 11-14.5v-7L14 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 14l2.5 2.5 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h4>Security &amp; Backups</h4>
-          <p>Row-level tenant isolation, nightly encrypted backups to offsite storage, and a tested restore runbook. Sleep easy.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== MODULES ===== -->
-  <section class="modules-section" id="modules">
-    <div class="container">
-      <p class="section-label section-label--light">Modularity</p>
-      <h2 class="h2--light">Grow Exactly as You Need</h2>
-      <p class="section-sub section-sub--light">Start with the Core. Add capability when — and only when — your practice is ready. Every module plugs into your existing portal the day it's activated.</p>
-      <div class="modules-grid">
-
-        <div class="module-card reveal">
-          <span class="mod-letter">A</span>
-          <h4>Missing-Document Discovery</h4>
-          <p>Required-docs checklist by case type. Automatically identifies and chases clients for outstanding items — so your staff doesn't have to.</p>
-          <span class="mod-tag">Efficiency</span>
-        </div>
-
-        <div class="module-card reveal">
-          <span class="mod-letter">B</span>
-          <h4>Secure Two-Way Messaging</h4>
-          <p>Kill the inbox. A secure client-to-firm messaging hub that replaces back-and-forth email entirely. Threaded, searchable, documented.</p>
-          <span class="mod-tag">High Value</span>
-        </div>
-
-        <div class="module-card reveal">
-          <span class="mod-letter">C</span>
-          <h4>Client E-Signature</h4>
-          <p>In-portal signing with SHA-256 integrity and full audit trail. Legally sound, frictionless for clients, and documented forever.</p>
-          <span class="mod-tag">High Value</span>
-        </div>
-
-        <div class="module-card reveal">
-          <span class="mod-letter">D</span>
-          <h4>Document Drafting</h4>
-          <p>Pick a case type, generate documents from your firm's templates. Less time drafting, more time practicing.</p>
-          <span class="mod-tag">Automation</span>
-        </div>
-
-        <div class="module-card module-card--ai reveal">
-          <span class="mod-letter">G</span>
-          <h4>AI Brain</h4>
-          <p>Query your firm's documents, notes, judge preferences, and county policies through a private conversational AI. Your institutional knowledge, instantly accessible.</p>
-          <span class="mod-tag mod-tag--gold">AI-Powered</span>
-        </div>
-
-        <div class="module-card reveal">
-          <span class="mod-letter">F</span>
-          <h4>Billing &amp; Time Tracking</h4>
-          <p>Start/stop timers tied to matters. Billing reports at your fingertips. Never lose a billable hour to a forgotten entry.</p>
-          <span class="mod-tag">Revenue</span>
-        </div>
-
-        <div class="module-card reveal">
-          <span class="mod-letter">H</span>
-          <h4>CEO Dashboard</h4>
-          <p>Pull external data — Stripe, QuickBooks, calendars, payroll — into a bespoke KPI dashboard built to your firm's exact specification.</p>
-          <span class="mod-tag">Analytics</span>
-        </div>
-
-        <div class="module-card reveal">
-          <span class="mod-letter">I</span>
-          <h4>Conflict Checker</h4>
-          <p>Search every client, matter, and party in seconds before taking a new case. Catch conflicts of interest before they become a problem — not after.</p>
-          <span class="mod-tag">Risk Management</span>
-        </div>
-
-        <div class="module-card reveal">
-          <span class="mod-letter">J</span>
-          <h4>Calendar Integration</h4>
-          <p>Hearings, deadlines, and appointments synced with the calendar your firm already uses. One schedule, everywhere, always current.</p>
-          <span class="mod-tag">Productivity</span>
-        </div>
-
-        <div class="module-card reveal">
-          <span class="mod-letter">K</span>
-          <h4>Document Translation</h4>
-          <p>Translate Spanish-language client documents and correspondence to English directly in the portal — without leaving your workflow. Other languages available on request.</p>
-          <span class="mod-tag">Client Service</span>
-        </div>
-
-        <div class="module-card module-card--custom reveal">
-          <span class="mod-letter">+</span>
-          <h4>Bespoke Modules</h4>
-          <p>If the menu doesn't cover your workflow, we build it. Custom modules are scoped, designed, and delivered to your specification.</p>
-          <span class="mod-tag mod-tag--outline">On Request</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECURITY DEEP DIVE ===== -->
-  <section class="security-section" id="security">
-    <div class="security-grid-bg"></div>
-    <div class="container">
-      <div class="security-layout">
-        <div class="security-text">
-          <p class="section-label">Confidentiality First</p>
-          <h2>Your Clients' Secrets Stay Yours.</h2>
-          <p class="security-lead">Attorney-client privilege doesn't pause when you use AI — and with IurisIQ, it never has to.</p>
-          <p>Our AI architecture is designed from the ground up around one principle: <strong>your clients' information never leaves your controlled environment.</strong> Unlike generic AI tools that learn from your queries, IurisIQ operates in an isolated, single-tenant deployment where the AI works <em>with</em> your data — and only for your firm.</p>
-
-          <div class="security-details">
-            <div class="sec-detail reveal">
-              <div class="sec-num">01</div>
-              <div>
-                <strong>Isolated Tenant Architecture</strong>
-                <p>Your firm's database, storage, and AI context are completely separated from any other client. There is no shared pool — ever.</p>
-              </div>
+      <div class="glass-panel p-8 rounded-3xl">
+        <form id="contact-form" class="space-y-6" novalidate>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <label class="font-body-sm font-bold text-slate-300 block">Your Name</label>
+              <input id="f-name" type="text" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder-slate-500" placeholder="Jane Smith, Esq." autocomplete="name">
             </div>
-            <div class="sec-detail reveal">
-              <div class="sec-num">02</div>
-              <div>
-                <strong>AI That Doesn't Learn From Your Data</strong>
-                <p>Your documents serve as AI context. They are never used to retrain or improve any external model. Your knowledge stays yours.</p>
-              </div>
-            </div>
-            <div class="sec-detail reveal">
-              <div class="sec-num">03</div>
-              <div>
-                <strong>Database-Enforced Access Control</strong>
-                <p>Role permissions are enforced at the database row level. Even a misconfigured application can't expose data it shouldn't see.</p>
-              </div>
-            </div>
-            <div class="sec-detail reveal">
-              <div class="sec-num">04</div>
-              <div>
-                <strong>Malware Scanning on Every Upload</strong>
-                <p>Your clients' uploads can't infect your firm. Every file — from clients or staff — is scanned by a commercial antivirus engine before it's ever visible in the portal. Infected files are deleted automatically and your team is alerted.</p>
-              </div>
-            </div>
-            <div class="sec-detail reveal">
-              <div class="sec-num">05</div>
-              <div>
-                <strong>Nightly Encrypted Backups</strong>
-                <p>Your data is backed up nightly to encrypted offsite storage with a tested, documented restore procedure. We've run the drill.</p>
-              </div>
+            <div class="space-y-2">
+              <label class="font-body-sm font-bold text-slate-300 block">Firm Name</label>
+              <input id="f-firm" type="text" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder-slate-500" placeholder="Smith &amp; Associates" autocomplete="organization">
             </div>
           </div>
-        </div>
-
-        <div class="security-visual">
-          <div class="shield-scene">
-            <div class="shield-ring shield-ring--3"></div>
-            <div class="shield-ring shield-ring--2"></div>
-            <div class="shield-ring shield-ring--1"></div>
-            <div class="shield-center">
-              <svg viewBox="0 0 96 96" fill="none" class="shield-svg">
-                <path d="M48 8L10 22V46C10 67.5 26.5 87 48 92C69.5 87 86 67.5 86 46V22L48 8Z"
-                  stroke="url(#shieldG)" stroke-width="2" stroke-linejoin="round" fill="none"/>
-                <path d="M33 48l11 11L63 36"
-                  stroke="url(#checkG)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <defs>
-                  <linearGradient id="shieldG" x1="10" y1="8" x2="86" y2="92" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#5BBDFF"/>
-                    <stop offset="100%" stop-color="#1B6FD4"/>
-                  </linearGradient>
-                  <linearGradient id="checkG" x1="33" y1="36" x2="63" y2="59" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#E5AF5A"/>
-                    <stop offset="100%" stop-color="#C4933F"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div class="shield-label">Client Privilege<br>Protected</div>
-            </div>
-            <div class="shield-node" style="--a:0deg">Isolated Tenants</div>
-            <div class="shield-node" style="--a:90deg">Zero Data Leak</div>
-            <div class="shield-node" style="--a:180deg">RBAC Enforced</div>
-            <div class="shield-node" style="--a:270deg">Encrypted Backup</div>
+          <div class="space-y-2">
+            <label class="font-body-sm font-bold text-slate-300 block">Email Address</label>
+            <input id="f-email" type="email" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder-slate-500" placeholder="jane@smithlegal.com" autocomplete="email">
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="how-section">
-    <div class="container">
-      <div class="how-header">
-        <p class="section-label">Getting Started</p>
-        <h2>Up and Running in Three Steps</h2>
-      </div>
-      <div class="steps">
-        <div class="step reveal">
-          <div class="step-num">01</div>
-          <h4>Discovery Conversation</h4>
-          <p>We learn your practice, your workflows, and your friction points. No canned demo — a real conversation about what actually slows you down.</p>
-        </div>
-        <div class="step-arrow">
-          <svg viewBox="0 0 40 16" fill="none"><path d="M0 8h36M30 2l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">02</div>
-          <h4>Core Deployment</h4>
-          <p>Your isolated portal is configured, branded, and delivered. Staff and clients get access. The full core is live and running.</p>
-        </div>
-        <div class="step-arrow">
-          <svg viewBox="0 0 40 16" fill="none"><path d="M0 8h36M30 2l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">03</div>
-          <h4>Grow by Module</h4>
-          <p>As your needs evolve, new modules are activated or built to spec. Your portal grows with your practice, on your timeline, at your pace.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA / CONTACT ===== -->
-  <section class="contact-section" id="contact">
-    <div class="container">
-      <div class="contact-card">
-        <div class="contact-card-glow"></div>
-        <div class="contact-info">
-          <p class="section-label section-label--light">Ready to Begin?</p>
-          <h2 class="h2--light">Let's Talk About Your Practice</h2>
-          <p>IurisIQ is deployed for law firms by a team that has built it from the ground up — not a vendor licensing a generic platform. Schedule a conversation and let's find out if it's the right fit.</p>
-          <div class="contact-callout">
-            <div class="callout-item">
-              <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><path d="M10 2L2 6v6c0 4.5 3.2 8.6 8 10 4.8-1.4 8-5.5 8-10V6L10 2z" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              Private. Isolated. Purpose-built for law.
-            </div>
-            <div class="callout-item">
-              <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              Modular — start with what you need.
-            </div>
-            <div class="callout-item">
-              <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 7v3l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              Delivered fast. Supported continuously.
-            </div>
+          <div class="space-y-2">
+            <label class="font-body-sm font-bold text-slate-300 block">What's your biggest practice management challenge?</label>
+            <textarea id="f-message" rows="3" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder-slate-500 resize-y" placeholder="Tell us what's slowing your practice down…"></textarea>
           </div>
-        </div>
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="f-name">Your Name</label>
-              <input type="text" id="f-name" placeholder="Jane Smith, Esq." autocomplete="name">
-            </div>
-            <div class="form-field">
-              <label for="f-firm">Firm Name</label>
-              <input type="text" id="f-firm" placeholder="Smith &amp; Associates" autocomplete="organization">
-            </div>
-          </div>
-          <div class="form-field">
-            <label for="f-email">Email Address</label>
-            <input type="email" id="f-email" placeholder="jane@smithlaw.com" autocomplete="email">
-          </div>
-          <div class="form-field">
-            <label for="f-message">What's your biggest practice management challenge?</label>
-            <textarea id="f-message" rows="4" placeholder="Tell us what's slowing your practice down…"></textarea>
-          </div>
-          <button type="submit" class="btn-submit">
-            <span class="btn-submit-text">Request a Demo</span>
-            <svg viewBox="0 0 20 20" fill="none" width="16" height="16"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <button type="submit" id="contact-submit" class="w-full bg-electric-blue text-white py-4 rounded-xl font-headline-lg text-body-md hover:bg-blue-600 transition-all flex items-center justify-center gap-2 active:scale-95">
+            <span id="submit-text">Start A Conversation</span>
+            <span class="material-symbols-outlined text-sm">send</span>
           </button>
-          <p class="form-note">No sales pressure. A real conversation about your practice.</p>
+          <p class="text-[10px] text-center font-label-caps text-slate-500">No sales pressure. A real conversation about your practice.</p>
         </form>
       </div>
     </div>
-  </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" height="30" class="footer-logo">
-        <p>AI-powered practice management for small law offices.<br>Secure by design. Customizable by nature.</p>
-      </div>
-      <div class="footer-nav">
-        <div class="footer-col">
-          <strong>Platform</strong>
-          <a href="#platform">Core Portal</a>
-          <a href="#modules">Modules</a>
-          <a href="#security">Security</a>
-        </div>
-        <div class="footer-col">
-          <strong>Company</strong>
-          <a href="#contact">Contact Us</a>
-          <a href="#contact">Request Demo</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bar">
-      <p>&copy; 2026 IurisIQ. All rights reserved. &nbsp;·&nbsp; Attorney-client privilege protected by design.</p>
-    </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="js/main.js"></script>
+<!-- ===== FOOTER ===== -->
+<footer class="bg-surface-container-lowest w-full rounded-t-xl mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-page py-12 max-w-container-max mx-auto">
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-3 mb-6">
+        <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-7 w-auto brightness-0 invert opacity-60">
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">AI-powered practice management for small law offices. Secure by design. Customizable by nature.</p>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Platform</span>
+      <a href="#platform" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Core Portal</a>
+      <a href="#modules"  class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Modules</a>
+      <a href="#security" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Security</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Company</span>
+      <a href="why-iurisiq.html" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Why IurisIQ</a>
+      <a href="#contact"  class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Contact Us</a>
+      <a href="#contact"  class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Start A Conversation</a>
+    </div>
+  </div>
+  <div class="border-t border-outline-variant/10 py-6 px-margin-page text-center max-w-container-max mx-auto">
+    <p class="font-label-caps text-[10px] text-on-surface-variant">&copy; 2026 IurisIQ. All rights reserved. &nbsp;·&nbsp; Attorney-client privilege protected by design.</p>
+  </div>
+</footer>
+
+<script>
+  // ── Module flip cards ──
+  document.querySelectorAll('.flip-tile').forEach(tile => {
+    tile.addEventListener('click', () => tile.classList.toggle('flipped'));
+  });
+
+  // ── Smooth scroll for all anchor links ──
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ── Contact form submission ──
+  (function () {
+    const form   = document.getElementById('contact-form');
+    const btn    = document.getElementById('contact-submit');
+    const label  = document.getElementById('submit-text');
+    if (!form || !btn || !label) return;
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.style.opacity = '0.75';
+      label.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name:    form.querySelector('#f-name').value.trim(),
+            firm:    form.querySelector('#f-firm').value.trim(),
+            email:   form.querySelector('#f-email').value.trim(),
+            message: form.querySelector('#f-message').value.trim(),
+          }),
+        });
+
+        if (res.ok) {
+          label.textContent = 'Message Sent!';
+          btn.style.background = '#10B981';
+          setTimeout(() => {
+            label.textContent = 'Start A Conversation';
+            btn.style.background = '';
+            btn.style.opacity = '';
+            btn.disabled = false;
+            form.reset();
+          }, 3500);
+        } else {
+          throw new Error('failed');
+        }
+      } catch {
+        label.textContent = 'Something went wrong';
+        btn.style.background = '#EF4444';
+        setTimeout(() => {
+          label.textContent = 'Start A Conversation';
+          btn.style.background = '';
+          btn.style.opacity = '';
+          btn.disabled = false;
+        }, 3500);
+      }
+    });
+  }());
+
+  // ── Button press micro-interactions ──
+  document.querySelectorAll('button, a.bg-electric-blue, a.bg-primary-container').forEach(el => {
+    el.addEventListener('mousedown',  () => el.classList.add('scale-95'));
+    el.addEventListener('mouseup',    () => el.classList.remove('scale-95'));
+    el.addEventListener('mouseleave', () => el.classList.remove('scale-95'));
+  });
+</script>
+
 </body>
 </html>
