@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Coming Soon — IurisIQ Roadmap</title>
+  <meta name="description" content="See what's coming next for IurisIQ — Trust Accounting, Time & Billing with QuickBooks, Client Self-Scheduling, and Immigration Forms Library.">
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#00174b",
+            "surface-container-high": "#282a32",
+            "slate-900": "#0F172A",
+            "on-surface-variant": "#c3c6d7",
+            "on-background": "#e1e2ed",
+            "error-container": "#93000a",
+            "inverse-primary": "#0053db",
+            "on-surface": "#e1e2ed",
+            "on-tertiary-container": "#4e3d00",
+            "slate-800": "#1E293B",
+            "tertiary": "#e9c349",
+            "on-error": "#690005",
+            "surface-container-lowest": "#0c0e16",
+            "electric-blue": "#3B82F6",
+            "error": "#ffb4ab",
+            "surface-container": "#1d1f27",
+            "outline": "#8d90a0",
+            "inverse-on-surface": "#2e3039",
+            "tertiary-fixed": "#ffe088",
+            "primary-container": "#2563eb",
+            "surface-bright": "#373942",
+            "ai-purple": "#8B5CF6",
+            "secondary-container": "#414753",
+            "surface": "#11131b",
+            "surface-dim": "#11131b",
+            "on-primary-fixed-variant": "#003ea8",
+            "slate-400": "#94A3B8",
+            "error-red": "#EF4444",
+            "surface-tint": "#b4c5ff",
+            "secondary": "#c1c6d5",
+            "on-secondary": "#2b313c",
+            "outline-variant": "#434655",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-tertiary": "#3c2f00",
+            "secondary-fixed": "#dde2f1",
+            "on-tertiary-fixed": "#241a00",
+            "on-primary-container": "#eeefff",
+            "tertiary-fixed-dim": "#e9c349",
+            "on-primary": "#002a78",
+            "surface-container-highest": "#32343d",
+            "surface-container-low": "#191b23",
+            "secondary-fixed-dim": "#c1c6d5",
+            "on-tertiary-fixed-variant": "#574500",
+            "tertiary-container": "#cca72f",
+            "background": "#11131b",
+            "on-error-container": "#ffdad6",
+            "surface-variant": "#32343d",
+            "primary-fixed": "#dbe1ff",
+            "inverse-surface": "#e1e2ed",
+            "primary": "#b4c5ff",
+            "success-green": "#10B981",
+            "on-secondary-fixed": "#161c26",
+            "on-secondary-container": "#b0b5c3",
+            "on-secondary-fixed-variant": "#414753",
+            "gold": "#C4933F",
+            "gold-light": "#E5AF5A"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            gutter: "24px",
+            "card-padding": "24px",
+            "container-max": "1440px",
+            base: "8px",
+            "margin-page": "40px"
+          },
+          fontFamily: {
+            "body-md": ["Inter"],
+            "display-lg": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "title-md": ["Montserrat"],
+            "body-sm": ["Inter"],
+            "label-caps": ["IBM Plex Mono"],
+            "body-lg": ["Inter"],
+            "headline-lg-mobile": ["Montserrat"]
+          },
+          fontSize: {
+            "body-md":  ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm":  ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }],
+            "body-lg":  ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-panel {
+      background: rgba(30, 41, 59, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(51, 65, 85, 0.5);
+    }
+    .mesh-bg {
+      background-image:
+        radial-gradient(at 0% 0%,   rgba(196, 147, 63, 0.10) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.08) 0, transparent 50%);
+    }
+    .flip-tile {
+      perspective: 1200px;
+      cursor: pointer;
+      min-height: 340px;
+    }
+    .flip-tile-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      transform-style: preserve-3d;
+      transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    .flip-tile.flipped .flip-tile-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+    }
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-electric-blue selection:text-white overflow-x-hidden">
+
+<!-- ===== NAV ===== -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-10 w-auto brightness-0 invert">
+    </a>
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="index.html#platform"  class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Platform</a>
+      <a href="index.html#modules"   class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Modules</a>
+      <a href="coming-soon.html"     class="text-gold-light font-label-caps text-label-caps transition-colors duration-200">Coming Soon</a>
+      <a href="why-iurisiq.html"     class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Why IurisIQ</a>
+      <a href="index.html#security"  class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Security</a>
+      <a href="index.html#contact"   class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Contact</a>
+    </div>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-headline-lg text-body-sm font-bold hover:bg-electric-blue transition-colors active:scale-95">
+      Start A Conversation
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="relative pt-32 pb-16 px-margin-page mesh-bg">
+  <div class="max-w-3xl mx-auto text-center">
+    <span class="font-label-caps text-label-caps text-gold-light tracking-widest mb-4 block">Roadmap</span>
+    <h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">
+      What's Coming<br>
+      <span class="text-gold-light">Next</span>
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+      IurisIQ is built incrementally — each addition is scoped, purposeful, and tested before it ships. These four modules are currently in development or active planning. Click any tile to see what's inside.
+    </p>
+  </div>
+</section>
+
+<!-- ===== COMING SOON TILES ===== -->
+<section class="px-margin-page pb-24 max-w-container-max mx-auto">
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/20 border border-outline-variant/20 rounded-3xl overflow-hidden">
+
+    <!-- Tile 1 — Trust Accounting (CORE) -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="flex justify-between items-center mb-6">
+            <span class="font-label-caps text-[10px] text-electric-blue bg-electric-blue/10 px-2 py-1 rounded uppercase">Core</span>
+            <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-1 rounded uppercase">In Development</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Trust Accounting</h5>
+          <p class="font-body-sm text-on-surface-variant">IOLTA-compliant trust accounting included with every IurisIQ deployment. Separate ledgers, overdraft protection, and bar-ready audit trails.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for details</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-label-caps text-[9px] text-electric-blue bg-electric-blue/10 px-2 py-0.5 rounded uppercase">Core</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <div class="w-full rounded-lg mb-4 flex items-center justify-center bg-electric-blue/10 border border-electric-blue/20" style="min-height:100px">
+            <span class="material-symbols-outlined" style="font-size:52px; color:#3B82F6; font-variation-settings:'FILL' 0;">account_balance</span>
+          </div>
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-1 text-on-surface">Trust Accounting</h6>
+          <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-0.5 rounded uppercase mb-3 self-start">Included in Core</span>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Separate IOLTA ledger per client and matter</li>
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Overdraft prevention and commingling safeguards</li>
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Earned vs. unearned retainer tracking</li>
+            <li class="flex gap-2"><span class="text-electric-blue shrink-0">→</span>Audit-ready reports for state bar review</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tile 2 — Time & Billing + QuickBooks (PREMIUM) -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="flex justify-between items-center mb-6">
+            <span class="font-label-caps text-[10px] text-tertiary bg-tertiary/10 px-2 py-1 rounded uppercase">Premium</span>
+            <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-1 rounded uppercase">In Development</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Time &amp; Billing + QuickBooks</h5>
+          <p class="font-body-sm text-on-surface-variant">Capture every billable minute and sync directly to QuickBooks Online. No double entry, no lost hours, no month-end reconciliation headaches.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for details</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-label-caps text-[9px] text-tertiary bg-tertiary/10 px-2 py-0.5 rounded uppercase">Premium</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <div class="w-full rounded-lg mb-4 flex items-center justify-center bg-tertiary/10 border border-tertiary/20" style="min-height:100px">
+            <span class="material-symbols-outlined" style="font-size:52px; color:#e9c349; font-variation-settings:'FILL' 0;">timer</span>
+          </div>
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-1 text-on-surface">Time &amp; Billing + QuickBooks</h6>
+          <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-0.5 rounded uppercase mb-3 self-start">Premium Add-On</span>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>One-tap start/stop timers linked to matters</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Auto-generated invoices from time entries</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Two-way QuickBooks Online sync</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Attorney-level billing and realization reports</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tile 3 — Client Self-Scheduling (PREMIUM) -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="flex justify-between items-center mb-6">
+            <span class="font-label-caps text-[10px] text-tertiary bg-tertiary/10 px-2 py-1 rounded uppercase">Premium</span>
+            <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-1 rounded uppercase">Planned — V2</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Client Self-Scheduling</h5>
+          <p class="font-body-sm text-on-surface-variant">Let clients book their own consultations and follow-up appointments — no phone tag, no back-and-forth emails, no scheduling assistant needed.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for details</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-label-caps text-[9px] text-tertiary bg-tertiary/10 px-2 py-0.5 rounded uppercase">Premium</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <div class="w-full rounded-lg mb-4 flex items-center justify-center bg-tertiary/10 border border-tertiary/20" style="min-height:100px">
+            <span class="material-symbols-outlined" style="font-size:52px; color:#e9c349; font-variation-settings:'FILL' 0;">event_available</span>
+          </div>
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-1 text-on-surface">Client Self-Scheduling</h6>
+          <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-0.5 rounded uppercase mb-3 self-start">Premium Add-On</span>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Embeddable booking widget for your firm's website</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Syncs with Google Calendar and Outlook</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Automated confirmation and reminder emails</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>New matter auto-created on first booking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tile 4 — Immigration Forms Library (PREMIUM) -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="flex justify-between items-center mb-6">
+            <span class="font-label-caps text-[10px] text-tertiary bg-tertiary/10 px-2 py-1 rounded uppercase">Premium</span>
+            <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-1 rounded uppercase">High Priority</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Immigration Forms Library</h5>
+          <p class="font-body-sm text-on-surface-variant">Auto-populate USCIS, DOJ, and EOIR forms directly from matter data. Government form changes are reflected automatically — no manual tracking required.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for details</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-label-caps text-[9px] text-tertiary bg-tertiary/10 px-2 py-0.5 rounded uppercase">Premium</span>
+            <span class="font-label-caps text-[9px] text-on-surface-variant/35 uppercase select-none">↺ flip back</span>
+          </div>
+          <div class="w-full rounded-lg mb-4 flex items-center justify-center bg-tertiary/10 border border-tertiary/20" style="min-height:100px">
+            <span class="material-symbols-outlined" style="font-size:52px; color:#e9c349; font-variation-settings:'FILL' 0;">library_books</span>
+          </div>
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-1 text-on-surface">Immigration Forms Library</h6>
+          <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-0.5 rounded uppercase mb-3 self-start">Premium Add-On</span>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>125+ USCIS, DOJ, and EOIR forms with auto-fill</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Auto-updates when government form versions change</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Real-time collaborative completion with client</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Covers family, business, and humanitarian cases</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Note -->
+  <p class="text-center font-label-caps text-[10px] text-on-surface-variant/50 mt-6">
+    Have a module in mind that isn't listed? Every IurisIQ deployment supports bespoke custom modules built to your exact spec.
+    <a href="index.html#contact" class="text-electric-blue hover:underline ml-1">Start a conversation →</a>
+  </p>
+
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="px-margin-page pb-24">
+  <div class="max-w-2xl mx-auto text-center glass-panel rounded-2xl px-8 py-12">
+    <span class="font-label-caps text-label-caps text-gold-light tracking-widest mb-4 block">Want early access?</span>
+    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Be the first to know when these ship.</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+      Tell us which modules matter most to your practice and we'll reach out the moment they're ready.
+    </p>
+    <a href="index.html#contact" class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container px-8 py-3 rounded-xl font-headline-lg text-body-md font-bold hover:bg-electric-blue transition-colors active:scale-95">
+      Start A Conversation
+      <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-surface-container-lowest w-full rounded-t-xl mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-page py-12 max-w-container-max mx-auto">
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-3 mb-6">
+        <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-7 w-auto brightness-0 invert opacity-60">
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">AI-powered practice management for small law offices. Secure by design. Customizable by nature.</p>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Platform</span>
+      <a href="index.html#platform"  class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Core Portal</a>
+      <a href="index.html#modules"   class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Modules</a>
+      <a href="index.html#security"  class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Security</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Company</span>
+      <a href="coming-soon.html"     class="font-body-sm text-body-sm text-gold-light">Coming Soon</a>
+      <a href="why-iurisiq.html"     class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Why IurisIQ</a>
+      <a href="index.html#contact"   class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Contact Us</a>
+    </div>
+  </div>
+  <div class="border-t border-outline-variant/10 py-6 px-margin-page text-center max-w-container-max mx-auto">
+    <p class="font-label-caps text-[10px] text-on-surface-variant">&copy; 2026 IurisIQ. All rights reserved. &nbsp;·&nbsp; Attorney-client privilege protected by design.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.flip-tile').forEach(tile => {
+    tile.addEventListener('click', () => tile.classList.toggle('flipped'));
+  });
+</script>
+
+</body>
+</html>
