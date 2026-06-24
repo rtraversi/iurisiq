@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Meet the Founder — IurisIQ</title>
+  <meta name="description" content="IurisIQ was built by Robert Traversi — 30 years in IT, married to an immigration attorney, and determined to make AI actually work for small law firms.">
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#00174b",
+            "surface-container-high": "#282a32",
+            "slate-900": "#0F172A",
+            "on-surface-variant": "#c3c6d7",
+            "on-background": "#e1e2ed",
+            "error-container": "#93000a",
+            "inverse-primary": "#0053db",
+            "on-surface": "#e1e2ed",
+            "on-tertiary-container": "#4e3d00",
+            "slate-800": "#1E293B",
+            "tertiary": "#e9c349",
+            "on-error": "#690005",
+            "surface-container-lowest": "#0c0e16",
+            "electric-blue": "#3B82F6",
+            "error": "#ffb4ab",
+            "surface-container": "#1d1f27",
+            "outline": "#8d90a0",
+            "inverse-on-surface": "#2e3039",
+            "tertiary-fixed": "#ffe088",
+            "primary-container": "#2563eb",
+            "surface-bright": "#373942",
+            "ai-purple": "#8B5CF6",
+            "secondary-container": "#414753",
+            "surface": "#11131b",
+            "surface-dim": "#11131b",
+            "on-primary-fixed-variant": "#003ea8",
+            "slate-400": "#94A3B8",
+            "error-red": "#EF4444",
+            "surface-tint": "#b4c5ff",
+            "secondary": "#c1c6d5",
+            "on-secondary": "#2b313c",
+            "outline-variant": "#434655",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-tertiary": "#3c2f00",
+            "secondary-fixed": "#dde2f1",
+            "on-tertiary-fixed": "#241a00",
+            "on-primary-container": "#eeefff",
+            "tertiary-fixed-dim": "#e9c349",
+            "on-primary": "#002a78",
+            "surface-container-highest": "#32343d",
+            "surface-container-low": "#191b23",
+            "secondary-fixed-dim": "#c1c6d5",
+            "on-tertiary-fixed-variant": "#574500",
+            "tertiary-container": "#cca72f",
+            "background": "#11131b",
+            "on-error-container": "#ffdad6",
+            "surface-variant": "#32343d",
+            "primary-fixed": "#dbe1ff",
+            "inverse-surface": "#e1e2ed",
+            "primary": "#b4c5ff",
+            "success-green": "#10B981",
+            "on-secondary-fixed": "#161c26",
+            "on-secondary-container": "#b0b5c3",
+            "on-secondary-fixed-variant": "#414753",
+            "gold": "#C4933F",
+            "gold-light": "#E5AF5A"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            gutter: "24px",
+            "card-padding": "24px",
+            "container-max": "1440px",
+            base: "8px",
+            "margin-page": "40px"
+          },
+          fontFamily: {
+            "body-md": ["Inter"],
+            "display-lg": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "title-md": ["Montserrat"],
+            "body-sm": ["Inter"],
+            "label-caps": ["IBM Plex Mono"],
+            "body-lg": ["Inter"],
+            "headline-lg-mobile": ["Montserrat"]
+          },
+          fontSize: {
+            "body-md":  ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm":  ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }],
+            "body-lg":  ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-panel {
+      background: rgba(30, 41, 59, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(51, 65, 85, 0.5);
+    }
+    .mesh-bg {
+      background-image:
+        radial-gradient(at 0% 0%,   rgba(59, 130, 246, 0.12) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.08) 0, transparent 50%);
+    }
+    .insight-bg {
+      background-image:
+        radial-gradient(at 50% 0%, rgba(139, 92, 246, 0.10) 0, transparent 60%),
+        radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.08) 0, transparent 50%);
+    }
+    .avatar-ring {
+      background: conic-gradient(from 180deg, #3B82F6, #8B5CF6, #3B82F6);
+      padding: 3px;
+      border-radius: 9999px;
+    }
+    .avatar-inner {
+      background: #1d1f27;
+      border-radius: 9999px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stat-card {
+      background: rgba(29, 31, 39, 0.8);
+      border: 1px solid rgba(67, 70, 85, 0.5);
+    }
+    blockquote::before {
+      content: '\201C';
+      position: absolute;
+      top: -0.2em;
+      left: -0.1em;
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(59, 130, 246, 0.2);
+      font-family: Georgia, serif;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-electric-blue selection:text-white overflow-x-hidden">
+
+<!-- ===== NAV ===== -->
+<nav id="nav" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-10 w-auto brightness-0 invert">
+    </a>
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="index.html#platform"  class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Platform</a>
+      <a href="index.html#modules"   class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Modules</a>
+      <a href="coming-soon.html"     class="text-on-surface-variant font-label-caps text-label-caps hover:text-gold-light transition-colors duration-200">Coming Soon</a>
+      <a href="why-iurisiq.html"     class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Why IurisIQ</a>
+      <a href="founder.html"         class="text-electric-blue font-label-caps text-label-caps transition-colors duration-200">Our Story</a>
+      <a href="index.html#security"  class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Security</a>
+      <a href="index.html#contact"   class="text-on-surface-variant font-label-caps text-label-caps hover:text-electric-blue transition-colors duration-200">Contact</a>
+    </div>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-headline-lg text-body-sm font-bold hover:bg-electric-blue transition-colors active:scale-95">
+      Start A Conversation
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="relative pt-32 pb-20 px-margin-page mesh-bg">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+
+      <!-- Avatar -->
+      <div class="flex-shrink-0">
+        <div class="avatar-ring w-48 h-48 md:w-56 md:h-56">
+          <div class="avatar-inner">
+            <!-- Photo placeholder — replace img tag when photo is ready -->
+            <span class="font-display-lg text-[56px] text-electric-blue/80 select-none">RT</span>
+          </div>
+        </div>
+        <div class="mt-4 text-center">
+          <p class="font-title-md text-title-md text-on-surface">Robert Traversi</p>
+          <p class="font-label-caps text-label-caps text-electric-blue mt-1">Founder, IurisIQ</p>
+        </div>
+      </div>
+
+      <!-- Headline copy -->
+      <div class="flex-1 pt-2">
+        <span class="font-label-caps text-label-caps text-electric-blue tracking-widest mb-4 block">Our Story</span>
+        <h1 class="font-display-lg text-[40px] md:text-display-lg leading-tight text-on-surface mb-6">
+          30 Years in IT.<br>
+          One Very Patient<br>
+          <span class="text-electric-blue">Attorney for a Wife.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+          IurisIQ wasn't born in a startup incubator or funded by venture capital. It was built by a guy who spent three decades making technology actually work — and then found a problem worth solving in his own house.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== STAT STRIP ===== -->
+<section class="px-margin-page pb-16">
+  <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="stat-card rounded-xl px-6 py-5 text-center">
+      <p class="font-display-lg text-[32px] text-electric-blue leading-none">30+</p>
+      <p class="font-label-caps text-label-caps text-on-surface-variant mt-2">Years in IT</p>
+    </div>
+    <div class="stat-card rounded-xl px-6 py-5 text-center">
+      <p class="font-display-lg text-[32px] text-ai-purple leading-none">1994</p>
+      <p class="font-label-caps text-label-caps text-on-surface-variant mt-2">In the Industry Since</p>
+    </div>
+    <div class="stat-card rounded-xl px-6 py-5 text-center">
+      <p class="font-display-lg text-[32px] text-gold-light leading-none">1</p>
+      <p class="font-label-caps text-label-caps text-on-surface-variant mt-2">Immigration Atty at Home</p>
+    </div>
+    <div class="stat-card rounded-xl px-6 py-5 text-center">
+      <p class="font-display-lg text-[32px] text-success-green leading-none">0</p>
+      <p class="font-label-caps text-label-caps text-on-surface-variant mt-2">VC Investors to Answer To</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORIGIN STORY ===== -->
+<section class="px-margin-page pb-20">
+  <div class="max-w-3xl mx-auto">
+
+    <span class="font-label-caps text-label-caps text-on-surface-variant/60 tracking-widest mb-6 block">How This Started</span>
+
+    <div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+      <p>
+        In 2025, my job was eliminated. That happens — it's IT, things change. But instead of jumping into the next corporate role, I decided to do something I'd been putting off for years: actually help my wife Katy with her law practice.
+      </p>
+      <p>
+        Katy is an immigration attorney. I'd spent years watching her and her staff do things manually that I <em class="text-on-surface not-italic font-medium">knew</em> could be automated. So I built her a portal — nothing fancy at first, just a few automations that saved her real time. And I found out pretty quickly that I loved doing it.
+      </p>
+      <p>
+        I started a small business doing automations and websites for small law firms. My second client was a family-law attorney in Dallas. She had a longer list of needs — a full client portal, case management, document vault, automated reminders, the works. That project grew into something much bigger than either of us expected. That project became IurisIQ.
+      </p>
+    </div>
+
+    <!-- Inline quote -->
+    <div class="mt-12 relative pl-8">
+      <blockquote class="relative font-title-md text-title-md text-on-surface italic leading-relaxed border-l-2 border-electric-blue/40 pl-6">
+        My wife Katy was my first client — a simple portal, a few automations. A family-law attorney in Dallas pushed me to build something far more complete. That's the version that became IurisIQ. Katy still uses it every day, and if something isn't working, I hear about it at dinner. That's a QA process I can vouch for.
+      </blockquote>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== THE AI INSIGHT ===== -->
+<section class="px-margin-page py-20 insight-bg border-t border-outline-variant/20">
+  <div class="max-w-3xl mx-auto">
+
+    <span class="font-label-caps text-label-caps text-ai-purple tracking-widest mb-4 block">The Problem I Kept Running Into</span>
+    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">
+      AI in law firms is a different problem.<br>
+      <span class="text-ai-purple">Most people were getting it wrong.</span>
+    </h2>
+
+    <div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+      <p>
+        When I started researching how to integrate AI into legal practice, I expected it to be a technology problem. It turned out to be an ethics problem wearing a technology disguise.
+      </p>
+      <p>
+        Attorney-client privilege isn't a setting you can toggle. Confidentiality is baked into the rules of professional conduct — it's not optional and it doesn't have an exception for "well, the AI tool is really useful." When a firm types privileged client information into a generic AI tool and that data touches a shared server somewhere, they have a problem. Most of them don't realize it.
+      </p>
+      <p>
+        I found that attorneys fell into one of two camps: they either didn't know about the risks, or they were so spooked by them that they'd written off AI entirely. Both outcomes leave small law firms behind — stuck doing manually what larger firms with dedicated IT departments are automating.
+      </p>
+      <p>
+        I wanted to build the middle path.
+      </p>
+    </div>
+
+    <!-- Callout box -->
+    <div class="mt-10 glass-panel rounded-2xl px-8 py-6 border-l-4 border-ai-purple/60">
+      <p class="font-title-md text-title-md text-on-surface mb-2">Why private architecture matters</p>
+      <p class="font-body-md text-body-md text-on-surface-variant">
+        IurisIQ runs in a single-tenant, private deployment. Your firm's data doesn't share infrastructure with any other firm. The AI features operate entirely within your private instance — nothing leaves it. That's not a feature we added later. It's how the platform was designed from day one.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== BACKGROUND ===== -->
+<section class="px-margin-page py-20 border-t border-outline-variant/20">
+  <div class="max-w-3xl mx-auto">
+
+    <span class="font-label-caps text-label-caps text-on-surface-variant/60 tracking-widest mb-6 block">The Background That Makes This Possible</span>
+    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">
+      I've been in IT since 1994.<br>
+      <span class="text-electric-blue">I know what "secure" actually means.</span>
+    </h2>
+
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+      My career has covered a lot of ground — network engineering, security architecture, risk and governance, identity and access management, automation, IT auditing. I've done the incident response calls, the architecture reviews, the compliance audits. When I say the platform is secure, it's not marketing copy. It's a technical claim I can defend.
+    </p>
+
+    <!-- Skill pills -->
+    <div class="flex flex-wrap gap-3 mb-10">
+      <span class="bg-surface-container border border-outline-variant/40 rounded-full px-4 py-2 font-label-caps text-label-caps text-on-surface-variant">Network Engineering</span>
+      <span class="bg-surface-container border border-outline-variant/40 rounded-full px-4 py-2 font-label-caps text-label-caps text-on-surface-variant">Security Architecture</span>
+      <span class="bg-surface-container border border-outline-variant/40 rounded-full px-4 py-2 font-label-caps text-label-caps text-on-surface-variant">Risk &amp; Governance</span>
+      <span class="bg-surface-container border border-outline-variant/40 rounded-full px-4 py-2 font-label-caps text-label-caps text-on-surface-variant">Identity &amp; Access Mgmt</span>
+      <span class="bg-surface-container border border-outline-variant/40 rounded-full px-4 py-2 font-label-caps text-label-caps text-on-surface-variant">Workflow Automation</span>
+      <span class="bg-surface-container border border-outline-variant/40 rounded-full px-4 py-2 font-label-caps text-label-caps text-on-surface-variant">IT Auditing</span>
+      <span class="bg-surface-container border border-outline-variant/40 rounded-full px-4 py-2 font-label-caps text-label-caps text-on-surface-variant">AI Integration</span>
+      <span class="bg-surface-container border border-outline-variant/40 rounded-full px-4 py-2 font-label-caps text-label-caps text-on-surface-variant">Development</span>
+    </div>
+
+    <div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+      <p>
+        Here's the honest version of why I can build things your current vendor can't: I have time, and I care about your specific firm.
+      </p>
+      <p>
+        SaaS companies have thousands of customers. Feature requests go into a backlog. Your workflow either fits their system or it doesn't, and usually it doesn't — and nobody's changing anything about it. I have a focused client roster. When you tell me something doesn't work the way your practice actually runs, I can change it. That's not an accident — it's the whole point of how IurisIQ is structured.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PERSONAL CLOSE ===== -->
+<section class="px-margin-page py-20 border-t border-outline-variant/20">
+  <div class="max-w-3xl mx-auto">
+
+    <div class="glass-panel rounded-2xl px-8 md:px-12 py-10">
+      <span class="font-label-caps text-label-caps text-gold-light tracking-widest mb-4 block">A Note From Robert</span>
+      <div class="space-y-5 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        <p>
+          I didn't set out to build a software company. I set out to solve a problem I was watching up close, every day, for someone I care about. The fact that IurisIQ became a real product — one that other firms are using and finding genuinely useful — still kind of catches me off guard.
+        </p>
+        <p>
+          What I do know is that small law firms deserve the same tools the big firms have. They just can't afford a six-figure IT department to implement them. That's the gap I'm filling.
+        </p>
+        <p class="text-on-surface font-medium">
+          If you want to talk about your firm — what's working, what's broken, what you wish you had — I'm genuinely happy to have that conversation. No sales pitch. Just a conversation.
+        </p>
+      </div>
+      <div class="mt-8 flex items-center gap-4">
+        <div class="avatar-ring w-12 h-12 flex-shrink-0">
+          <div class="avatar-inner">
+            <span class="font-headline-lg text-sm text-electric-blue/80">RT</span>
+          </div>
+        </div>
+        <div>
+          <p class="font-body-md text-body-md text-on-surface font-semibold">Robert Traversi</p>
+          <p class="font-label-caps text-label-caps text-on-surface-variant mt-0.5">Founder — IurisIQ</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="px-margin-page pb-24">
+  <div class="max-w-2xl mx-auto text-center glass-panel rounded-2xl px-8 py-12">
+    <span class="font-label-caps text-label-caps text-electric-blue tracking-widest mb-4 block">Let's Talk</span>
+    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">You'll be talking to the person who built it.</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+      Not a sales rep. Not a support queue. When you reach out, you get me — and I actually know how everything works.
+    </p>
+    <a href="index.html#contact" class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container px-8 py-3 rounded-xl font-headline-lg text-body-md font-bold hover:bg-electric-blue transition-colors active:scale-95">
+      Start A Conversation
+      <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-surface-container-lowest w-full rounded-t-xl mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-page py-12 max-w-container-max mx-auto">
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-3 mb-6">
+        <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-7 w-auto brightness-0 invert opacity-60">
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">AI-powered practice management for small law offices. Secure by design. Customizable by nature.</p>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Platform</span>
+      <a href="index.html#platform"  class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Core Portal</a>
+      <a href="index.html#modules"   class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Modules</a>
+      <a href="index.html#security"  class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Security</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Company</span>
+      <a href="why-iurisiq.html"     class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Why IurisIQ</a>
+      <a href="founder.html"         class="font-body-sm text-body-sm text-electric-blue">Our Story</a>
+      <a href="coming-soon.html"     class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Coming Soon</a>
+      <a href="index.html#contact"   class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Contact Us</a>
+    </div>
+  </div>
+  <div class="border-t border-outline-variant/10 py-6 px-margin-page text-center max-w-container-max mx-auto">
+    <p class="font-label-caps text-[10px] text-on-surface-variant">&copy; 2026 IurisIQ. All rights reserved. &nbsp;·&nbsp; Attorney-client privilege protected by design.</p>
+  </div>
+</footer>
+
+</body>
+</html>
