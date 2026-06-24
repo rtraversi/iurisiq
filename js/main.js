@@ -1,69 +1,68 @@
 /* IurisIQ — main.js */
 
 // ============================================================
-// HERO CANVAS — Network graph animation (mirrors the logo icon)
+// HERO CANVAS — Flowing data streams
 // ============================================================
 (function () {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  const NODE_COUNT = 55;
-  const MAX_DIST   = 150;
-  const SPEED      = 0.28;
-  const NODE_COLOR = '91,189,255';
-  const EDGE_COLOR = '91,189,255';
-
-  let W, H, nodes = [], animFrame;
+  const STREAM_COUNT = 26;
+  let W, H, streams = [], animFrame;
 
   function resize() {
     W = canvas.width  = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
   }
 
-  function makeNode() {
+  function makeStream(index, distributed) {
+    const isGold   = Math.random() < 0.12;
+    const color    = isGold ? '196,147,63' : '91,189,255';
+    const rowH     = H / STREAM_COUNT;
+    const baseY    = rowH * index + rowH * 0.5;
     return {
-      x:  Math.random() * W,
-      y:  Math.random() * H,
-      vx: (Math.random() - 0.5) * SPEED,
-      vy: (Math.random() - 0.5) * SPEED,
-      r:  Math.random() * 1.8 + 0.8,
+      y:       baseY + (Math.random() - 0.5) * rowH * 0.9,
+      x:       distributed ? Math.random() * (W + 400) - 200 : W + 20 + Math.random() * 300,
+      length:  W * (0.12 + Math.random() * 0.38),
+      speed:   0.18 + Math.random() * 0.52,
+      opacity: 0.03 + Math.random() * 0.09,
+      width:   0.3  + Math.random() * 0.85,
+      color,
     };
   }
 
   function tick() {
     ctx.clearRect(0, 0, W, H);
 
-    // Draw edges
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dx   = nodes[i].x - nodes[j].x;
-        const dy   = nodes[i].y - nodes[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < MAX_DIST) {
-          const alpha = (1 - dist / MAX_DIST) * 0.22;
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(${EDGE_COLOR},${alpha})`;
-          ctx.lineWidth = 0.6;
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.stroke();
-        }
-      }
-    }
+    streams.forEach((s, idx) => {
+      const x0 = s.x, x1 = s.x + s.length;
+      const grad = ctx.createLinearGradient(x0, 0, x1, 0);
+      grad.addColorStop(0,    `rgba(${s.color},0)`);
+      grad.addColorStop(0.2,  `rgba(${s.color},${s.opacity})`);
+      grad.addColorStop(0.8,  `rgba(${s.color},${s.opacity})`);
+      grad.addColorStop(1,    `rgba(${s.color},0)`);
 
-    // Draw nodes
-    nodes.forEach(n => {
       ctx.beginPath();
-      ctx.fillStyle = `rgba(${NODE_COLOR},0.55)`;
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.strokeStyle = grad;
+      ctx.lineWidth   = s.width;
+      ctx.moveTo(x0, s.y);
+      ctx.lineTo(x1, s.y);
+      ctx.stroke();
+
+      // Leading-edge node dot
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(${s.color},${Math.min(s.opacity * 2.8, 0.32)})`;
+      ctx.arc(x0 + s.length * 0.2, s.y, s.width * 1.4, 0, Math.PI * 2);
       ctx.fill();
 
-      // Update position
-      n.x += n.vx;
-      n.y += n.vy;
-      if (n.x < -20 || n.x > W + 20) n.vx *= -1;
-      if (n.y < -20 || n.y > H + 20) n.vy *= -1;
+      s.x -= s.speed;
+
+      if (s.x + s.length < 0) {
+        const fresh = makeStream(idx % STREAM_COUNT, false);
+        fresh.y = s.y + (Math.random() - 0.5) * 12;
+        streams[idx] = fresh;
+      }
     });
 
     animFrame = requestAnimationFrame(tick);
@@ -71,17 +70,71 @@
 
   function init() {
     resize();
-    nodes = Array.from({ length: NODE_COUNT }, makeNode);
+    streams = Array.from({ length: STREAM_COUNT }, (_, i) => makeStream(i, true));
     if (animFrame) cancelAnimationFrame(animFrame);
     tick();
   }
 
-  window.addEventListener('resize', () => {
-    resize();
-    nodes = Array.from({ length: NODE_COUNT }, makeNode);
+  window.addEventListener('resize', () => { resize(); }, { passive: true });
+  init();
+}());
+
+
+// ============================================================
+// HERO CURSOR GLOW — Follows mouse with soft lag
+// ============================================================
+(function () {
+  const hero  = document.getElementById('hero');
+  const glow  = document.getElementById('hero-cursor-glow');
+  if (!hero || !glow) return;
+
+  let visible = false;
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    glow.style.left    = x + 'px';
+    glow.style.top     = y + 'px';
+    glow.style.opacity = '1';
+    if (!visible) { visible = true; }
   }, { passive: true });
 
-  init();
+  hero.addEventListener('mouseleave', () => {
+    glow.style.opacity = '0';
+    visible = false;
+  }, { passive: true });
+}());
+
+
+// ============================================================
+// HERO TICKER — Cycles through law practice areas
+// ============================================================
+(function () {
+  const el = document.getElementById('hero-ticker-text');
+  if (!el) return;
+
+  const AREAS = [
+    'your workflows.',
+    'your firm size.',
+    'your practice area.',
+    'your growth.',
+    'your clients.',
+  ];
+  let idx = 0;
+
+  setInterval(() => {
+    el.classList.add('t-exit');
+    setTimeout(() => {
+      idx = (idx + 1) % AREAS.length;
+      el.textContent = AREAS[idx];
+      el.classList.remove('t-exit');
+      el.classList.add('t-enter');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => { el.classList.remove('t-enter'); });
+      });
+    }, 290);
+  }, 2800);
 }());
 
 
@@ -156,13 +209,13 @@
 
 
 // ============================================================
-// CONTACT FORM — Simple feedback on submit
+// CONTACT FORM — POST to /api/contact via Resend
 // ============================================================
 (function () {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const btn      = form.querySelector('.btn-submit');
@@ -172,23 +225,39 @@
     btn.disabled = true;
     btn.style.opacity = '0.75';
     if (textSpan) textSpan.textContent = 'Sending…';
-    else btn.textContent = 'Sending…';
 
-    // Simulate send (replace with real endpoint later)
-    setTimeout(() => {
-      if (textSpan) textSpan.textContent = 'Message Sent!';
-      else btn.textContent = 'Message Sent!';
-      btn.style.background = '#1A8055';
+    const setText = (t) => { if (textSpan) textSpan.textContent = t; else btn.textContent = t; };
+    const reset   = () => {
+      setText(original);
+      btn.style.background = '';
+      btn.style.opacity    = '';
+      btn.disabled         = false;
+    };
 
-      setTimeout(() => {
-        if (textSpan) textSpan.textContent = original;
-        else btn.textContent = original;
-        btn.style.background = '';
-        btn.style.opacity    = '';
-        btn.disabled         = false;
-        form.reset();
-      }, 3500);
-    }, 900);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:    form.querySelector('#f-name').value.trim(),
+          firm:    form.querySelector('#f-firm').value.trim(),
+          email:   form.querySelector('#f-email').value.trim(),
+          message: form.querySelector('#f-message').value.trim(),
+        }),
+      });
+
+      if (res.ok) {
+        setText('Message Sent!');
+        btn.style.background = '#1A8055';
+        setTimeout(() => { reset(); form.reset(); }, 3500);
+      } else {
+        throw new Error('send failed');
+      }
+    } catch {
+      setText('Something went wrong');
+      btn.style.background = '#b91c1c';
+      setTimeout(reset, 3500);
+    }
   });
 }());
 
