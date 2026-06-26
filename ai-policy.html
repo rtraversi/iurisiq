@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>AI Policy — IurisIQ</title>
+  <meta name="description" content="IurisIQ's Responsible AI Policy — how AI works in our platform, what we do and don't do with your client data, and what attorneys must know about AI-assisted legal work.">
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#00174b",
+            "surface-container-high": "#282a32",
+            "slate-900": "#0F172A",
+            "on-surface-variant": "#c3c6d7",
+            "on-background": "#e1e2ed",
+            "error-container": "#93000a",
+            "inverse-primary": "#0053db",
+            "on-surface": "#e1e2ed",
+            "on-tertiary-container": "#4e3d00",
+            "slate-800": "#1E293B",
+            "tertiary": "#e9c349",
+            "on-error": "#690005",
+            "surface-container-lowest": "#0c0e16",
+            "electric-blue": "#3B82F6",
+            "error": "#ffb4ab",
+            "surface-container": "#1d1f27",
+            "outline": "#8d90a0",
+            "inverse-on-surface": "#2e3039",
+            "tertiary-fixed": "#ffe088",
+            "primary-container": "#2563eb",
+            "surface-bright": "#373942",
+            "ai-purple": "#8B5CF6",
+            "secondary-container": "#414753",
+            "surface": "#11131b",
+            "surface-dim": "#11131b",
+            "on-primary-fixed-variant": "#003ea8",
+            "slate-400": "#94A3B8",
+            "error-red": "#EF4444",
+            "surface-tint": "#b4c5ff",
+            "secondary": "#c1c6d5",
+            "on-secondary": "#2b313c",
+            "outline-variant": "#434655",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-tertiary": "#3c2f00",
+            "secondary-fixed": "#dde2f1",
+            "on-tertiary-fixed": "#241a00",
+            "on-primary-container": "#eeefff",
+            "tertiary-fixed-dim": "#e9c349",
+            "on-primary": "#002a78",
+            "surface-container-highest": "#32343d",
+            "surface-container-low": "#191b23",
+            "secondary-fixed-dim": "#c1c6d5",
+            "on-tertiary-fixed-variant": "#574500",
+            "tertiary-container": "#cca72f",
+            "background": "#11131b",
+            "on-error-container": "#ffdad6",
+            "surface-variant": "#32343d",
+            "primary-fixed": "#dbe1ff",
+            "inverse-surface": "#e1e2ed",
+            "primary": "#b4c5ff",
+            "success-green": "#10B981",
+            "on-secondary-fixed": "#161c26",
+            "on-secondary-container": "#b0b5c3",
+            "on-secondary-fixed-variant": "#414753",
+            "gold": "#C4933F",
+            "gold-light": "#E5AF5A"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            gutter: "24px",
+            "card-padding": "24px",
+            "container-max": "1440px",
+            base: "8px",
+            "margin-page": "40px"
+          },
+          fontFamily: {
+            "body-md": ["Inter"],
+            "display-lg": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "title-md": ["Montserrat"],
+            "body-sm": ["Inter"],
+            "label-caps": ["IBM Plex Mono"],
+            "body-lg": ["Inter"],
+            "headline-lg-mobile": ["Montserrat"]
+          },
+          fontSize: {
+            "body-md":  ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm":  ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }],
+            "body-lg":  ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .mesh-bg {
+      background-image:
+        radial-gradient(at 0% 0%,   rgba(139, 92, 246, 0.12) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.08) 0, transparent 50%);
+    }
+    .prose-legal h2 { font-family: Montserrat, sans-serif; font-size: 20px; font-weight: 600; line-height: 28px; color: #e1e2ed; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+    .prose-legal h3 { font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 600; color: #b4c5ff; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .prose-legal p  { font-family: Inter, sans-serif; font-size: 15px; line-height: 26px; color: #c3c6d7; margin-bottom: 1rem; }
+    .prose-legal ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+    .prose-legal li { font-family: Inter, sans-serif; font-size: 15px; line-height: 26px; color: #c3c6d7; margin-bottom: 0.25rem; }
+    .prose-legal a  { color: #3B82F6; text-decoration: underline; }
+    .prose-legal a:hover { color: #b4c5ff; }
+    .section-divider { border-top: 1px solid rgba(67, 70, 85, 0.4); margin-top: 2rem; padding-top: 0.5rem; }
+    .commitment-card { background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.25); border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+    .commitment-card p { margin-bottom: 0; color: #c3c6d7; font-size: 15px; line-height: 26px; }
+    .do-card  { background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.25); border-radius: 0.75rem; padding: 1.25rem 1.5rem; }
+    .dont-card { background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.2); border-radius: 0.75rem; padding: 1.25rem 1.5rem; }
+    .do-card li, .dont-card li { font-size: 15px; line-height: 26px; margin-bottom: 0.35rem; }
+    .do-card li { color: #c3c6d7; }
+    .dont-card li { color: #c3c6d7; }
+    .do-card .label  { font-family: IBM Plex Mono, monospace; font-size: 11px; letter-spacing: 0.1em; font-weight: 700; color: #10B981; margin-bottom: 0.75rem; }
+    .dont-card .label { font-family: IBM Plex Mono, monospace; font-size: 11px; letter-spacing: 0.1em; font-weight: 700; color: #f87171; margin-bottom: 0.75rem; }
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: fixed; top: 1rem; left: 1rem; width: auto; height: auto; background: #2563eb; color: #fff; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 700; z-index: 9999; outline: 3px solid #b4c5ff; outline-offset: 2px; }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ===== NAV ===== -->
+<nav id="nav" aria-label="Main navigation" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <a href="index.html" class="flex items-center gap-3" aria-label="IurisIQ home">
+      <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-20 w-auto brightness-0 invert">
+    </a>
+    <div class="hidden md:flex items-center space-x-8" role="list">
+      <a href="index.html#platform"   role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Platform</a>
+      <a href="index.html#modules"    role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Modules</a>
+      <a href="coming-soon.html"      role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-gold-light transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Coming Soon</a>
+      <a href="index.html#security"   role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Security</a>
+      <a href="why-iurisiq.html"      role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Why IurisIQ</a>
+      <a href="founder.html"          role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Our Story</a>
+      <a href="index.html#contact"    role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Contact</a>
+    </div>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-headline-lg text-body-sm font-bold hover:bg-electric-blue transition-colors active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:rounded-lg">
+      Start A Conversation
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<a id="main-content" tabindex="-1" class="absolute top-0 sr-only"></a>
+<section class="relative pt-32 pb-12 px-margin-page mesh-bg">
+  <div class="max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full border border-outline-variant mb-6">
+      <span class="material-symbols-outlined text-ai-purple text-sm" aria-hidden="true" style="font-variation-settings:'FILL' 1;">smart_toy</span>
+      <span class="font-label-caps text-label-caps text-ai-purple">Responsible AI</span>
+    </div>
+    <h1 class="font-display-lg text-[36px] md:text-[48px] leading-tight font-bold mb-4">AI Policy</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant">Effective Date: June 25, 2026</p>
+  </div>
+</section>
+
+<!-- ===== CONTENT ===== -->
+<main class="px-margin-page pb-20">
+  <div class="max-w-3xl mx-auto prose-legal">
+
+    <p class="mt-8">IurisIQ uses artificial intelligence to help attorneys work faster and more accurately. This policy explains exactly how AI works inside our platform, what we do and don't do with your data, and what you need to know as a licensed professional using AI-assisted tools.</p>
+    <p>We wrote this in plain language because we think you deserve a straight answer — not a legal hedge.</p>
+
+    <!-- The short version -->
+    <div class="commitment-card mt-6">
+      <p><span class="material-symbols-outlined text-ai-purple align-middle mr-2 text-base" aria-hidden="true" style="font-variation-settings:'FILL' 1;">lock</span><strong style="color:#e1e2ed;">The short version:</strong> Your client data is yours. We never use it to train AI models. Our AI assists attorneys — it does not replace attorney judgment. Every AI output requires your review before it goes anywhere.</p>
+    </div>
+
+    <!-- 1 -->
+    <div class="section-divider">
+      <h2>1. What AI Does in IurisIQ</h2>
+      <p>AI features in IurisIQ are designed to reduce repetitive work and surface information faster. Current AI-assisted capabilities include:</p>
+
+      <h3>Document Drafting Assistance</h3>
+      <p>The AI drafting tool generates first-draft letters, motions, immigration cover letters, and client communications based on case data you have already entered in the platform. It does not retrieve or generate information from outside your case file.</p>
+
+      <h3>Conflict of Interest Check</h3>
+      <p>AI assists in identifying potential conflicts by scanning matter and party data across your case database. The system surfaces likely matches and flags them for attorney review — it does not make conflict determinations. That judgment remains entirely yours.</p>
+
+      <h3>Document Translation</h3>
+      <p>Built-in AI translation converts documents, intake forms, and correspondence between English and Spanish (with additional languages available on request). Translations are generated for reference and attorney review — they are not certified translations.</p>
+
+      <h3>Case Intelligence</h3>
+      <p>The AI Brain module analyzes case data to surface deadlines, flag missing documents, identify status patterns, and suggest next steps. Recommendations are informational — the attorney decides what action to take.</p>
+
+      <h3>Intake Form Analysis</h3>
+      <p>AI can pre-fill portions of matter records from completed intake forms, reducing manual data entry. All pre-filled data is presented for attorney or staff review and confirmation before being committed to the file.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="section-divider">
+      <h2>2. What We Do — and Don't Do — With Your Data</h2>
+      <p>This is the question attorneys ask us most. Here is the complete picture:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div class="do-card">
+          <div class="label">WE DO</div>
+          <ul class="list-none pl-0">
+            <li class="flex gap-2"><span class="text-success-green shrink-0 font-bold">✓</span> Process your data to deliver AI features within your account</li>
+            <li class="flex gap-2"><span class="text-success-green shrink-0 font-bold">✓</span> Keep your data isolated in your firm's private tenant</li>
+            <li class="flex gap-2"><span class="text-success-green shrink-0 font-bold">✓</span> Use aggregated, anonymized platform telemetry to improve performance</li>
+            <li class="flex gap-2"><span class="text-success-green shrink-0 font-bold">✓</span> Allow you to opt in to AI feature improvements with explicit consent</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="label">WE DO NOT</div>
+          <ul class="list-none pl-0">
+            <li class="flex gap-2"><span class="text-error-red shrink-0 font-bold">✗</span> Use your client data to train AI models — ever</li>
+            <li class="flex gap-2"><span class="text-error-red shrink-0 font-bold">✗</span> Share your case data with third-party AI providers for training</li>
+            <li class="flex gap-2"><span class="text-error-red shrink-0 font-bold">✗</span> Allow AI outputs from one firm's data to influence another firm's results</li>
+            <li class="flex gap-2"><span class="text-error-red shrink-0 font-bold">✗</span> Sell or license your data to any third party</li>
+            <li class="flex gap-2"><span class="text-error-red shrink-0 font-bold">✗</span> Use AI to make autonomous decisions about your cases or clients</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="section-divider">
+      <h2>3. Private AI Architecture</h2>
+      <p>IurisIQ operates on a <strong>single-tenant architecture</strong>. Your firm's data lives in its own isolated environment — it is never pooled with or accessible to other firms, even within shared infrastructure. This means:</p>
+      <ul>
+        <li>AI features run against your data only — no cross-firm data leakage is architecturally possible</li>
+        <li>When AI models process your documents, that processing occurs within your tenant boundary</li>
+        <li>Any AI model we deploy is treated as a processor operating under strict data handling constraints, not as a general-purpose service with access to your content</li>
+      </ul>
+      <p>Where IurisIQ uses third-party AI infrastructure (such as foundation model APIs for document generation), those providers are contracted under data processing agreements that prohibit training on customer content and require equivalent data isolation standards.</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="section-divider">
+      <h2>4. Attorney Responsibility and Human Oversight</h2>
+      <p>AI-assisted features in IurisIQ are tools, not decision-makers. The following principles govern how AI interacts with attorney work product:</p>
+
+      <h3>You must review all AI output before use</h3>
+      <p>Every AI-generated draft, translation, conflict flag, and recommendation is presented to you for review before it is filed, sent, or acted upon. The platform is designed so that no AI output is automatically transmitted to a client, court, or government agency.</p>
+
+      <h3>AI does not practice law</h3>
+      <p>Nothing generated by IurisIQ's AI constitutes legal advice, a legal opinion, or a legal determination. As a licensed attorney, you remain solely responsible for the accuracy, completeness, and professional appropriateness of all work product — including work product that was drafted or assisted by AI.</p>
+
+      <h3>Competence and supervision obligations remain yours</h3>
+      <p>Your state bar's rules of professional conduct apply to your use of AI tools. Many bars have issued formal guidance on attorney competence in AI use, including obligations to understand how AI tools work, supervise AI-generated output, and maintain client confidentiality. IurisIQ does not relieve you of any of those obligations. We recommend consulting your state bar's AI guidance before using AI-assisted features for client matters.</p>
+
+      <h3>Verify AI output for accuracy</h3>
+      <p>AI systems can produce outputs that appear plausible but are factually incorrect, out of date, or inappropriate for a specific matter — a risk sometimes called "hallucination." You must independently verify all AI-generated content for factual accuracy, legal correctness, and suitability before relying on it in any client matter, filing, or communication.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="section-divider">
+      <h2>5. Immigration Filings and Government Submissions</h2>
+      <p>When IurisIQ assists in preparing immigration filings or transmitting data through government APIs (including the USCIS API), the following additional rules apply:</p>
+      <ul>
+        <li>You must review the complete contents of any filing before submission</li>
+        <li>AI-assisted form population is a drafting aid — the attorney of record is responsible for verifying that all information is accurate, complete, and consistent with the client's actual circumstances</li>
+        <li>Submitting inaccurate information to a government agency may constitute a violation of federal law and professional conduct rules regardless of whether AI was used in preparation</li>
+        <li>IurisIQ does not verify, certify, or take responsibility for the accuracy of any government filing prepared using the platform</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="section-divider">
+      <h2>6. Bias, Fairness, and Limitations</h2>
+      <p>AI systems reflect patterns in the data they were trained on and can produce outputs that are biased, incomplete, or incorrect. IurisIQ takes the following steps to reduce this risk:</p>
+      <ul>
+        <li>We evaluate AI features for disparate output quality across common client demographics before deployment</li>
+        <li>We do not use AI to make eligibility determinations, risk scores, or recommendations that affect whether a client should be represented</li>
+        <li>We maintain feedback channels so attorneys can report AI outputs that appear biased, incorrect, or harmful</li>
+        <li>We disclose known limitations of specific AI features within the platform at the point of use</li>
+      </ul>
+      <p>Despite these measures, no AI system is free of bias or error. Attorney review of AI output is the final safeguard, and your professional judgment supersedes any AI recommendation.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="section-divider">
+      <h2>7. Transparency and Labeling</h2>
+      <p>IurisIQ labels AI-generated content within the platform so you always know what was produced by AI and what was entered by a human. We do not present AI output as human-authored without disclosure.</p>
+      <p>If you share AI-generated content with clients or third parties outside the platform, you are responsible for any disclosure obligations that may apply under applicable professional conduct rules or law.</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="section-divider">
+      <h2>8. Bar Association Guidance</h2>
+      <p>A growing number of state bars and the American Bar Association have issued formal guidance on attorneys' ethical obligations when using AI tools. Key themes from that guidance include:</p>
+      <ul>
+        <li><strong>Competence (ABA Model Rule 1.1):</strong> Attorneys must understand the benefits and risks of technology they use, including AI</li>
+        <li><strong>Supervision (ABA Model Rule 5.3):</strong> Attorneys must supervise AI tools as they would non-lawyer assistants</li>
+        <li><strong>Confidentiality (ABA Model Rule 1.6):</strong> Attorneys must take reasonable steps to prevent unauthorized disclosure of client information through AI tools</li>
+        <li><strong>Communication (ABA Model Rule 1.4):</strong> Some guidance suggests disclosure to clients when AI is used in their matter may be appropriate</li>
+      </ul>
+      <p>IurisIQ is designed to support compliance with these obligations — single-tenant isolation addresses confidentiality; labeling and review gates support supervision; and this policy supports informed use. We recommend you consult your state bar's current AI guidance, as it is evolving rapidly.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="section-divider">
+      <h2>9. Opting Out of AI Features</h2>
+      <p>AI-assisted features in IurisIQ are optional. Firm administrators can disable specific AI features for their account at any time through the platform settings. Disabling AI features does not affect access to any other part of the platform.</p>
+      <p>If you have concerns about a specific AI feature or want to understand how a particular output was generated, contact our support team at <a href="mailto:support@iurisiq.com">support@iurisiq.com</a>.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="section-divider">
+      <h2>10. Reporting AI Errors and Concerns</h2>
+      <p>We take reports of AI errors seriously. If an AI feature produces output that is incorrect, biased, harmful, or otherwise problematic, please report it:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:ai@iurisiq.com">ai@iurisiq.com</a></li>
+        <li><strong>Subject line:</strong> AI Output Concern</li>
+      </ul>
+      <p>Include a description of what the AI produced, the feature used, and why you believe the output was problematic. We review all reports and use them to improve our AI systems.</p>
+    </div>
+
+    <!-- 11 -->
+    <div class="section-divider">
+      <h2>11. Changes to This Policy</h2>
+      <p>AI capabilities in IurisIQ will evolve. When we add new AI features or change how existing features work in a material way, we will update this policy and notify subscribers by email at least 30 days before changes take effect. The current version of this policy is always available at <a href="https://iurisiq.com/ai-policy.html">iurisiq.com/ai-policy.html</a>.</p>
+    </div>
+
+    <!-- 12 -->
+    <div class="section-divider">
+      <h2>12. Contact</h2>
+      <ul>
+        <li><strong>AI questions and concerns:</strong> <a href="mailto:ai@iurisiq.com">ai@iurisiq.com</a></li>
+        <li><strong>General legal questions:</strong> <a href="mailto:legal@iurisiq.com">legal@iurisiq.com</a></li>
+        <li><strong>Mail:</strong> IurisIQ, Attn: AI Policy, PO Box 37810, Raleigh, NC 27616</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-surface-container-lowest w-full rounded-t-xl mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-page py-12 max-w-container-max mx-auto">
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-3 mb-6">
+        <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-7 w-auto brightness-0 invert opacity-60">
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">AI-powered practice management for small law offices. Secure by design. Customizable by nature.</p>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Platform</span>
+      <a href="index.html#platform" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Core Portal</a>
+      <a href="index.html#modules"  class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Modules</a>
+      <a href="index.html#security" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Security</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Company</span>
+      <a href="why-iurisiq.html"   class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Why IurisIQ</a>
+      <a href="founder.html"       class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Our Story</a>
+      <a href="coming-soon.html"   class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Coming Soon</a>
+      <a href="index.html#contact" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Contact Us</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Legal</span>
+      <a href="privacy.html"       class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Privacy Policy</a>
+      <a href="terms.html"         class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Terms of Service</a>
+      <a href="ai-policy.html"     class="font-body-sm text-body-sm text-electric-blue">AI Policy</a>
+      <a href="accessibility.html" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Accessibility</a>
+    </div>
+  </div>
+  <div class="border-t border-outline-variant/10 py-6 px-margin-page text-center max-w-container-max mx-auto">
+    <p class="font-label-caps text-[10px] text-on-surface-variant">&copy; 2026 IurisIQ. All rights reserved. &nbsp;·&nbsp; Attorney-client privilege protected by design.</p>
+  </div>
+</footer>
+
+</body>
+</html>
