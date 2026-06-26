@@ -154,12 +154,16 @@
       color: rgba(59, 130, 246, 0.2);
       font-family: Georgia, serif;
     }
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: fixed; top: 1rem; left: 1rem; width: auto; height: auto; background: #2563eb; color: #fff; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 700; z-index: 9999; outline: 3px solid #b4c5ff; outline-offset: 2px; }
   </style>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-electric-blue selection:text-white overflow-x-hidden">
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- ===== NAV ===== -->
-<nav id="nav" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<nav id="nav" aria-label="Main navigation" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
   <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
     <a href="index.html" class="flex items-center gap-3">
       <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-20 w-auto brightness-0 invert">
@@ -180,6 +184,7 @@
 </nav>
 
 <!-- ===== HERO ===== -->
+<a id="main-content" tabindex="-1" class="absolute top-0 sr-only"></a>
 <section class="relative pt-32 pb-20 px-margin-page mesh-bg">
   <div class="max-w-4xl mx-auto">
     <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
@@ -407,6 +412,12 @@
       <a href="founder.html"         class="font-body-sm text-body-sm text-electric-blue">Our Story</a>
       <a href="coming-soon.html"     class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Coming Soon</a>
       <a href="index.html#contact"   class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Contact Us</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Legal</span>
+      <a href="privacy.html"       class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Privacy Policy</a>
+      <a href="terms.html"         class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Terms of Service</a>
+      <a href="accessibility.html" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors">Accessibility</a>
     </div>
   </div>
   <div class="border-t border-outline-variant/10 py-6 px-margin-page text-center max-w-container-max mx-auto">

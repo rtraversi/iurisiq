@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Accessibility Statement — IurisIQ</title>
+  <meta name="description" content="IurisIQ's commitment to Section 508 and WCAG 2.1 AA accessibility standards for our website and platform.">
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#00174b",
+            "surface-container-high": "#282a32",
+            "slate-900": "#0F172A",
+            "on-surface-variant": "#c3c6d7",
+            "on-background": "#e1e2ed",
+            "error-container": "#93000a",
+            "inverse-primary": "#0053db",
+            "on-surface": "#e1e2ed",
+            "on-tertiary-container": "#4e3d00",
+            "slate-800": "#1E293B",
+            "tertiary": "#e9c349",
+            "on-error": "#690005",
+            "surface-container-lowest": "#0c0e16",
+            "electric-blue": "#3B82F6",
+            "error": "#ffb4ab",
+            "surface-container": "#1d1f27",
+            "outline": "#8d90a0",
+            "inverse-on-surface": "#2e3039",
+            "tertiary-fixed": "#ffe088",
+            "primary-container": "#2563eb",
+            "surface-bright": "#373942",
+            "ai-purple": "#8B5CF6",
+            "secondary-container": "#414753",
+            "surface": "#11131b",
+            "surface-dim": "#11131b",
+            "on-primary-fixed-variant": "#003ea8",
+            "slate-400": "#94A3B8",
+            "error-red": "#EF4444",
+            "surface-tint": "#b4c5ff",
+            "secondary": "#c1c6d5",
+            "on-secondary": "#2b313c",
+            "outline-variant": "#434655",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-tertiary": "#3c2f00",
+            "secondary-fixed": "#dde2f1",
+            "on-tertiary-fixed": "#241a00",
+            "on-primary-container": "#eeefff",
+            "tertiary-fixed-dim": "#e9c349",
+            "on-primary": "#002a78",
+            "surface-container-highest": "#32343d",
+            "surface-container-low": "#191b23",
+            "secondary-fixed-dim": "#c1c6d5",
+            "on-tertiary-fixed-variant": "#574500",
+            "tertiary-container": "#cca72f",
+            "background": "#11131b",
+            "on-error-container": "#ffdad6",
+            "surface-variant": "#32343d",
+            "primary-fixed": "#dbe1ff",
+            "inverse-surface": "#e1e2ed",
+            "primary": "#b4c5ff",
+            "success-green": "#10B981",
+            "on-secondary-fixed": "#161c26",
+            "on-secondary-container": "#b0b5c3",
+            "on-secondary-fixed-variant": "#414753",
+            "gold": "#C4933F",
+            "gold-light": "#E5AF5A"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            gutter: "24px",
+            "card-padding": "24px",
+            "container-max": "1440px",
+            base: "8px",
+            "margin-page": "40px"
+          },
+          fontFamily: {
+            "body-md": ["Inter"],
+            "display-lg": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "title-md": ["Montserrat"],
+            "body-sm": ["Inter"],
+            "label-caps": ["IBM Plex Mono"],
+            "body-lg": ["Inter"],
+            "headline-lg-mobile": ["Montserrat"]
+          },
+          fontSize: {
+            "body-md":  ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-sm":  ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "700" }],
+            "body-lg":  ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .mesh-bg {
+      background-image:
+        radial-gradient(at 0% 0%,   rgba(59, 130, 246, 0.10) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.07) 0, transparent 50%);
+    }
+    .prose-legal h2 { font-family: Montserrat, sans-serif; font-size: 20px; font-weight: 600; line-height: 28px; color: #e1e2ed; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+    .prose-legal h3 { font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 600; color: #b4c5ff; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .prose-legal p  { font-family: Inter, sans-serif; font-size: 15px; line-height: 26px; color: #c3c6d7; margin-bottom: 1rem; }
+    .prose-legal ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+    .prose-legal li { font-family: Inter, sans-serif; font-size: 15px; line-height: 26px; color: #c3c6d7; margin-bottom: 0.25rem; }
+    .prose-legal a  { color: #3B82F6; text-decoration: underline; }
+    .prose-legal a:hover { color: #b4c5ff; }
+    .section-divider { border-top: 1px solid rgba(67, 70, 85, 0.4); margin-top: 2rem; padding-top: 0.5rem; }
+    .conformance-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 0.5rem; padding: 0.75rem 1.25rem; margin-bottom: 1.5rem; }
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: fixed; top: 1rem; left: 1rem; width: auto; height: auto; background: #2563eb; color: #fff; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 700; z-index: 9999; outline: 3px solid #b4c5ff; outline-offset: 2px; }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+<!-- Skip to main content (508 compliance) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ===== NAV ===== -->
+<nav id="nav" aria-label="Main navigation" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <a href="index.html" class="flex items-center gap-3" aria-label="IurisIQ home">
+      <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-20 w-auto brightness-0 invert">
+    </a>
+    <div class="hidden md:flex items-center space-x-8" role="list">
+      <a href="index.html#platform"   role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Platform</a>
+      <a href="index.html#modules"    role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Modules</a>
+      <a href="coming-soon.html"      role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-gold-light transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Coming Soon</a>
+      <a href="index.html#security"   role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Security</a>
+      <a href="why-iurisiq.html"      role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Why IurisIQ</a>
+      <a href="founder.html"          role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Our Story</a>
+      <a href="index.html#contact"    role="listitem" class="text-on-surface-variant font-label-caps text-[14px] tracking-[0.1em] font-bold hover:text-electric-blue transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Contact</a>
+    </div>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-headline-lg text-body-sm font-bold hover:bg-electric-blue transition-colors active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:rounded-lg">
+      Start A Conversation
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<section class="relative pt-32 pb-12 px-margin-page mesh-bg">
+  <div class="max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full border border-outline-variant mb-6">
+      <span class="material-symbols-outlined text-electric-blue text-sm" aria-hidden="true" style="font-variation-settings:'FILL' 1;">accessibility_new</span>
+      <span class="font-label-caps text-label-caps text-electric-blue">Accessibility</span>
+    </div>
+    <h1 class="font-display-lg text-[36px] md:text-[48px] leading-tight font-bold mb-4">Accessibility Statement</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant">Last Updated: June 25, 2026</p>
+  </div>
+</section>
+
+<!-- ===== CONTENT ===== -->
+<main id="main-content" class="px-margin-page pb-20">
+  <div class="max-w-3xl mx-auto prose-legal">
+
+    <!-- Commitment -->
+    <p class="mt-8">IurisIQ is committed to ensuring that our website and legal practice management platform are accessible to all users, including individuals with disabilities. We strive to conform to <strong>Section 508 of the Rehabilitation Act</strong> and the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA</strong>.</p>
+
+    <div class="conformance-badge">
+      <span class="material-symbols-outlined text-success-green" aria-hidden="true" style="font-variation-settings:'FILL' 1;">verified</span>
+      <span class="font-label-caps text-label-caps text-success-green">WCAG 2.1 AA — Partially Conformant (Ongoing Remediation)</span>
+    </div>
+
+    <p>We are actively working to identify and resolve accessibility barriers. This statement describes our current conformance status, known limitations, and how to contact us if you experience an issue.</p>
+
+    <!-- Scope -->
+    <div class="section-divider">
+      <h2>Scope</h2>
+      <p>This statement applies to:</p>
+      <ul>
+        <li><strong>iurisiq.com</strong> — Our public marketing website</li>
+        <li><strong>IurisIQ Platform</strong> — The case management application accessed by subscribers</li>
+      </ul>
+      <p>Third-party websites linked from our site are not covered by this statement.</p>
+    </div>
+
+    <!-- Technical Specs -->
+    <div class="section-divider">
+      <h2>Technical Specifications</h2>
+      <p>Our website and platform rely on the following technologies for conformance:</p>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS (including Tailwind CSS)</li>
+        <li>JavaScript (ES2020+)</li>
+        <li>WAI-ARIA 1.2 attributes for interactive components</li>
+      </ul>
+
+      <h3>Browser and Assistive Technology Compatibility</h3>
+      <p>We test against the following combinations:</p>
+      <ul>
+        <li>Google Chrome (latest) with NVDA on Windows</li>
+        <li>Safari (latest) with VoiceOver on macOS</li>
+        <li>Firefox (latest) with JAWS on Windows</li>
+        <li>Chrome on Android with TalkBack</li>
+        <li>Safari on iOS with VoiceOver</li>
+      </ul>
+    </div>
+
+    <!-- Measures Taken -->
+    <div class="section-divider">
+      <h2>Measures Taken</h2>
+      <p>IurisIQ takes the following measures to ensure accessibility:</p>
+      <ul>
+        <li><strong>Skip navigation links:</strong> Every page begins with a "Skip to main content" link, visible on keyboard focus, to allow users to bypass repetitive navigation</li>
+        <li><strong>Semantic HTML:</strong> Headings, landmarks (<code>nav</code>, <code>main</code>, <code>footer</code>), and lists are used to communicate page structure to assistive technologies</li>
+        <li><strong>Keyboard accessibility:</strong> All interactive elements — navigation links, buttons, form fields, and interactive components — are operable via keyboard alone</li>
+        <li><strong>Focus indicators:</strong> Keyboard focus is visible on all interactive elements via high-contrast focus rings</li>
+        <li><strong>Descriptive image alt text:</strong> All meaningful images have descriptive alternative text; decorative images are marked with <code>alt=""</code></li>
+        <li><strong>Decorative icon suppression:</strong> Icon font characters used decoratively carry <code>aria-hidden="true"</code> so they are not read by screen readers</li>
+        <li><strong>Color contrast:</strong> Text and interactive elements meet or exceed a 4.5:1 contrast ratio against their backgrounds</li>
+        <li><strong>Form accessibility:</strong> All form fields have associated labels with matching <code>for</code>/<code>id</code> attributes; required fields are indicated</li>
+        <li><strong>Resizable text:</strong> Content is readable when text is scaled up to 200% without loss of content or functionality</li>
+        <li><strong>No reliance on color alone:</strong> Information is not conveyed solely through color</li>
+        <li><strong>ARIA landmarks and roles:</strong> <code>role</code>, <code>aria-label</code>, and <code>aria-expanded</code> attributes are used where semantic HTML alone is insufficient</li>
+        <li><strong>No auto-playing media:</strong> No audio or video plays automatically</li>
+        <li><strong>Page titles:</strong> Each page has a unique, descriptive title</li>
+        <li><strong>Language declaration:</strong> The <code>lang</code> attribute on the <code>&lt;html&gt;</code> element declares the page language as English</li>
+      </ul>
+    </div>
+
+    <!-- Known Limitations -->
+    <div class="section-divider">
+      <h2>Known Limitations</h2>
+      <p>Despite our efforts, some areas are not yet fully conformant. Known limitations include:</p>
+      <ul>
+        <li><strong>Interactive flip cards (Marketing website):</strong> Module flip cards on the home page are keyboard-operable with Space/Enter but may have announcements that could be improved for screen reader context — under remediation</li>
+        <li><strong>Mobile navigation menu:</strong> The hamburger menu on small viewports requires further ARIA enhancement — under remediation</li>
+        <li><strong>Platform complex UI components:</strong> Some advanced components in the IurisIQ application (data grids, rich text editor, drag-and-drop file upload) are partially conformant; we are working with component vendors to improve compliance</li>
+        <li><strong>PDF documents:</strong> Some exported documents may not be fully tagged for screen reader use; we are implementing PDF/UA standards in our export pipeline</li>
+      </ul>
+      <p>We are actively remediating these issues. If you encounter a barrier not listed here, please contact us.</p>
+    </div>
+
+    <!-- WCAG Criteria -->
+    <div class="section-divider">
+      <h2>Conformance Status</h2>
+      <p>IurisIQ's website and platform are <strong>partially conformant</strong> with WCAG 2.1 Level AA. "Partially conformant" means that some content does not fully conform to the standard due to the exceptions noted above, and that we are actively working to resolve those gaps.</p>
+      <p>We conduct accessibility reviews using a combination of:</p>
+      <ul>
+        <li>Automated scanning with Axe accessibility engine</li>
+        <li>Manual keyboard navigation testing</li>
+        <li>Screen reader testing with NVDA and VoiceOver</li>
+        <li>Color contrast analysis with APCA and WCAG contrast tools</li>
+      </ul>
+    </div>
+
+    <!-- Feedback -->
+    <div class="section-divider">
+      <h2>Feedback and Contact</h2>
+      <p>We welcome feedback on the accessibility of our website and platform. If you experience barriers that prevent you from accessing any content or completing any task, please contact our accessibility team:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:accessibility@iurisiq.com">accessibility@iurisiq.com</a></li>
+        <li><strong>Subject line:</strong> Accessibility Issue</li>
+        <li><strong>Response time:</strong> We aim to respond to accessibility requests within 2 business days</li>
+      </ul>
+      <p>When contacting us, please include a description of the issue, the URL or page where the barrier occurred, and the assistive technology and browser you are using. This helps us reproduce and resolve the issue faster.</p>
+    </div>
+
+    <!-- Enforcement -->
+    <div class="section-divider">
+      <h2>Formal Complaints</h2>
+      <p>If you are not satisfied with our response to an accessibility complaint, you may contact the U.S. Access Board, which enforces Section 508 standards for federal electronic and information technology:</p>
+      <ul>
+        <li>U.S. Access Board — <a href="https://www.access-board.gov" rel="noopener noreferrer" target="_blank">www.access-board.gov</a></li>
+      </ul>
+      <p>You may also file a complaint with the U.S. Department of Justice Civil Rights Division regarding ADA Title III digital accessibility requirements.</p>
+    </div>
+
+    <!-- Assessment approach -->
+    <div class="section-divider">
+      <h2>Assessment Approach</h2>
+      <p>IurisIQ assessed the accessibility of its website and platform using the following approaches:</p>
+      <ul>
+        <li>Self-evaluation by our development team against WCAG 2.1 Level AA success criteria</li>
+        <li>Automated testing integrated into our development and deployment pipeline</li>
+        <li>Manual testing with assistive technologies</li>
+        <li>Periodic review by third-party accessibility consultants (planned)</li>
+      </ul>
+      <p>This statement was prepared on June 25, 2026 and will be reviewed and updated at least annually.</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-surface-container-lowest w-full rounded-t-xl mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-page py-12 max-w-container-max mx-auto">
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-3 mb-6">
+        <img src="IurisIQ-Logo-transparent.png" alt="IurisIQ" class="h-7 w-auto brightness-0 invert opacity-60">
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">AI-powered practice management for small law offices. Secure by design. Customizable by nature.</p>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Platform</span>
+      <a href="index.html#platform" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Core Portal</a>
+      <a href="index.html#modules"  class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Modules</a>
+      <a href="index.html#security" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Security</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Company</span>
+      <a href="why-iurisiq.html"   class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Why IurisIQ</a>
+      <a href="founder.html"       class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Our Story</a>
+      <a href="coming-soon.html"   class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Coming Soon</a>
+      <a href="index.html#contact" class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Contact Us</a>
+    </div>
+    <div class="flex flex-col space-y-4">
+      <span class="font-label-caps text-label-caps text-on-surface font-bold">Legal</span>
+      <a href="privacy.html"       class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Privacy Policy</a>
+      <a href="terms.html"         class="font-body-sm text-body-sm text-on-surface-variant hover:text-electric-blue transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-electric-blue focus-visible:rounded">Terms of Service</a>
+      <a href="accessibility.html" class="font-body-sm text-body-sm text-electric-blue">Accessibility</a>
+    </div>
+  </div>
+  <div class="border-t border-outline-variant/10 py-6 px-margin-page text-center max-w-container-max mx-auto">
+    <p class="font-label-caps text-[10px] text-on-surface-variant">&copy; 2026 IurisIQ. All rights reserved. &nbsp;·&nbsp; Attorney-client privilege protected by design.</p>
+  </div>
+</footer>
+
+</body>
+</html>
