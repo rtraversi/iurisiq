@@ -608,6 +608,38 @@
       </div>
     </div>
 
+    <!-- Module G — Portal Invoicing -->
+    <div class="flip-tile group">
+      <div class="flip-tile-inner">
+        <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
+          <div class="flex justify-between items-center mb-6">
+            <span class="font-label-caps text-[10px] text-tertiary bg-tertiary/10 px-2 py-1 rounded uppercase">Revenue</span>
+            <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-1 rounded uppercase">Premium</span>
+          </div>
+          <h5 class="font-headline-lg text-title-md mb-4">Portal Invoicing</h5>
+          <p class="font-body-sm text-on-surface-variant">Pull unbilled entries from FreshBooks or QuickBooks, generate invoices with a payment link already embedded, and watch the trust ledger update when the client pays.</p>
+          <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
+            <span class="text-sm leading-none">↺</span>
+            <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for details</span>
+          </div>
+        </div>
+        <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-label-caps text-[9px] text-tertiary bg-tertiary/10 px-2 py-0.5 rounded uppercase">Revenue</span>
+            <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-1.5 py-0.5 rounded uppercase">Premium</span>
+          </div>
+          <h6 class="font-headline-lg text-[14px] font-semibold mb-1 text-on-surface">Portal Invoicing</h6>
+          <p class="text-[11px] font-body-sm text-on-surface-variant/60 italic mb-3">The bridge between your accounting software and your payment processor.</p>
+          <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Pulls unbilled time from FreshBooks or QuickBooks — no re-entry</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Select entries, click Generate — invoice created in your accounting system</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Payment link auto-fetched from your processor (Clover, Confido, and more)</li>
+            <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Client pays → webhook fires → trust ledger updates automatically</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <!-- Module F — CEO Dashboard -->
     <div class="flip-tile group">
       <div class="flip-tile-inner">
@@ -701,8 +733,8 @@
       </div>
     </div>
 
-    <!-- Module + — Bespoke (spans full width) -->
-    <div class="flip-tile group lg:col-span-4">
+    <!-- Module + — Bespoke (spans 3 cols) -->
+    <div class="flip-tile group lg:col-span-3">
       <div class="flip-tile-inner">
         <div class="flip-face p-8 bg-surface-container group-hover:bg-surface-container-high transition-colors flex flex-col">
           <div class="mb-6">
@@ -734,55 +766,6 @@
       </div>
     </div>
 
-  </div>
-
-  <!-- Premium Modules -->
-  <div class="mt-6">
-    <div class="flex items-center gap-4 mb-4 px-1">
-      <span class="font-label-caps text-[10px] text-gold-light bg-gold/20 border border-gold/30 px-3 py-1 rounded-full uppercase tracking-widest">★ Premium Add-ons</span>
-      <div class="flex-1 h-px bg-gold/20"></div>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/10 border border-gold/30 rounded-3xl overflow-hidden">
-
-      <!-- Module G — Portal Invoicing (Premium) -->
-      <div class="flip-tile group lg:col-span-2">
-        <div class="flip-tile-inner">
-          <div class="flip-face p-8 bg-surface group-hover:bg-surface-container transition-colors flex flex-col">
-            <div class="flex justify-between items-center mb-6">
-              <span class="font-label-caps text-[10px] text-tertiary bg-tertiary/10 px-2 py-1 rounded uppercase">Revenue</span>
-              <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-2 py-1 rounded uppercase">Premium</span>
-            </div>
-            <h5 class="font-headline-lg text-title-md mb-4">Portal Invoicing</h5>
-            <p class="font-body-sm text-on-surface-variant">Pull unbilled entries from FreshBooks or QuickBooks, generate invoices with a payment link already embedded, and watch the trust ledger update when the client pays.</p>
-            <div class="flex items-center gap-1.5 mt-auto pt-6 text-on-surface-variant/25 select-none">
-              <span class="text-sm leading-none">↺</span>
-              <span class="font-label-caps text-[9px] uppercase tracking-widest">flip for details</span>
-            </div>
-          </div>
-          <div class="flip-face flip-back p-5 bg-surface-container flex flex-col">
-            <div class="flex justify-between items-center mb-4">
-              <span class="font-label-caps text-[9px] text-tertiary bg-tertiary/10 px-2 py-0.5 rounded uppercase">Revenue</span>
-              <span class="font-label-caps text-[9px] text-gold-light bg-gold/20 border border-gold/30 px-1.5 py-0.5 rounded uppercase">Premium</span>
-            </div>
-            <h6 class="font-headline-lg text-[14px] font-semibold mb-1 text-on-surface">Portal Invoicing</h6>
-            <p class="text-[11px] font-body-sm text-on-surface-variant/60 italic mb-3">The bridge between your accounting software and your payment processor.</p>
-            <ul class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
-              <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Pulls unbilled time from FreshBooks or QuickBooks — no re-entry</li>
-              <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Select entries, click Generate — invoice created in your accounting system</li>
-              <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Payment link auto-fetched from your processor (Clover, Confido, and more)</li>
-              <li class="flex gap-2"><span class="text-tertiary shrink-0">→</span>Client pays → webhook fires → trust ledger updates automatically</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Premium placeholder -->
-      <div class="lg:col-span-2 p-8 bg-surface flex flex-col items-center justify-center text-center">
-        <span class="font-label-caps text-[9px] text-gold-light/40 uppercase tracking-widest mb-3">More Premium Modules Coming</span>
-        <p class="font-body-sm text-on-surface-variant/30 text-[12px] max-w-xs">Advanced integrations and white-glove capabilities added on an ongoing basis.</p>
-      </div>
-
-    </div>
   </div>
 
 </section>
